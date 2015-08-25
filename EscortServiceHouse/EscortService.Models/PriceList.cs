@@ -11,8 +11,8 @@ namespace EscortService.Models
 {
     public class PriceList
     {
-        [Key]
-        public int Id { get; set; }
+        [Key, ForeignKey("Escort")]
+        public string EscortId { get; set; }
 
         public decimal? ThirtyMinuteRate { get; set; }
 
@@ -28,11 +28,8 @@ namespace EscortService.Models
 
         public decimal? WeekendRate { get; set; }
 
-        public decimal? WeeklyRate { get; set; }
-
-        public string EscortId { get; set; }
-
-        [ForeignKey("EscortId")]
+        public decimal? WeeklyRate { get; set; }            
+               
         public virtual Escort Escort { get; set; }
     }
 }

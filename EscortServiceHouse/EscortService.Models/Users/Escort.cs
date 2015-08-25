@@ -33,15 +33,12 @@ namespace EscortService.Models.Users
 
         public BreastsType BrastsType { get; set; }
 
-        public int Height { get; set; }
+        public int? Height { get; set; }
 
-        public int Weight { get; set; }
+        public int? Weight { get; set; }
 
         public string Town { get; set; }
-
-        public int PriceListId { get; set; }
-
-        [ForeignKey("PriceListId")]
+        
         public virtual PriceList Prices { get; set; }
 
         public ICollection<Service> Services

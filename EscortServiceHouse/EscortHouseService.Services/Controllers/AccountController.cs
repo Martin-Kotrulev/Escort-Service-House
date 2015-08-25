@@ -17,6 +17,7 @@ using EscortHouseService.Services.Models;
 using EscortHouseService.Services.Providers;
 using EscortHouseService.Services.Results;
 using EscortService.Models.Users;
+using EscortService.Models.Enumerations;
 
 namespace EscortHouseService.Services.Controllers
 {
@@ -333,7 +334,8 @@ namespace EscortHouseService.Services.Controllers
             { 
                 UserName = model.Username, 
                 Email = model.Email,
-                PhoneNumber = model.PhoneNumber
+                PhoneNumber = model.PhoneNumber,
+                Gender = (Gender)Enum.Parse(typeof(Gender), model.Gender, true)
             };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);

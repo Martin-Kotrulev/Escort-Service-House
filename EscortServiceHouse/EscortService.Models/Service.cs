@@ -11,13 +11,16 @@ namespace EscortService.Models
 {
     public class Service
     {
-        [Key, ForeignKey("Escort")]
-        public string EscortId { get; set; }
+        [Key]
+        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }
 
         public decimal? Price { get; set; }
+
+        [ForeignKey("Escort")]
+        public string EscortId { get; set; }
         
         public Escort Escort { get; set; }
     }
