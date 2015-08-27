@@ -6,7 +6,8 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
-using System.Web.Http.ModelBinding;
+using System.Linq;
+using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -18,6 +19,7 @@ using EscortHouseService.Services.Providers;
 using EscortHouseService.Services.Results;
 using EscortService.Models.Users;
 using EscortService.Models.Enumerations;
+using EscortServiceHouse.Data;
 
 namespace EscortHouseService.Services.Controllers
 {
@@ -330,20 +332,23 @@ namespace EscortHouseService.Services.Controllers
                 return BadRequest(ModelState);
             }
 
+            var context = new EscortServiceHouseEntities();
             var user = new ApplicationUser() 
             { 
                 UserName = model.Username, 
                 Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
-                Gender = (Gender)Enum.Parse(typeof(Gender), model.Gender, true)
+                Gender = (Gender)Enum.Parse(typeof(Gender), model.Gender, true),
             };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
-
+            
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
             }
+            var newUser = context.Users.FirstOrDefault(u => u.UserName == user.UserName);
+            var roleUser = UserManager.AddToRole(newUser.Id, model.Role);
 
             return Ok();
         }
