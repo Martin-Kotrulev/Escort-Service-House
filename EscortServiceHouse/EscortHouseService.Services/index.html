@@ -44,6 +44,13 @@
             bottom: 5px;
             top:auto;
         }
+        .error {
+            color: red;
+        }
+        #regComplete {
+            color: green;
+            text-align:center;
+        }
     </style>
 </head>
 <body>
@@ -58,53 +65,63 @@
           </button>
           <a class="navbar-brand" href="#">The Red Barroness</a>  
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Username" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-        
+          <div id="navbar" class="navbar-collapse collapse">
+              <form class="navbar-form navbar-right">
+                  <div class="form-group">
+                      <input type="text" placeholder="Username" class="form-control">
+                  </div>
+                  <div class="form-group">
+                      <input type="password" placeholder="Password" class="form-control">
+                  </div>
+                  <button type="submit" class="btn btn-success">Sign in</button>
+              </form>
+          </div><!--/.navbar-collapse --> 
           <ul class="nav nav-pills navbar-right profnav" role="tablist">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">Profile</a></li>
-            <li role="presentation"><a href="#">Messages</a></li>
+              <li role="presentation" class="active"><a href="#">Home</a></li>
+              <li role="presentation"><a href="#">Profile</a></li>
+              <li role="presentation"><a href="#">Messages</a></li>
           </ul>
           
       </div>
     </nav>
-    
-    
     <div class="container jcont">
         <div class="jumbotron">
             <h1>The Red Barroness</h1>
             <p>Wellcome to the world of pleasure...</p>
         </div>
     </div>
+    <div class="container">
+        <h2 id="regComplete"></h2>
+    </div>
     <div class="container guest">
         <button type="button" class="btn btn-warning col-sm-8 col-sm-offset-2">Continue as Guest -></button>
     </div>
-    <div class="container registration">
-        <form class="form-horizontal" role="form" runat="server">
+    <div class="container">
+        <form id="reg" class="form-horizontal" role="form" runat="server" onsubmit="register(); return false;">
            <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Username: </label><input class="col-sm-3" type="text" name="Username" placeholder="Enter your username...">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Username: </label>
+               <input id="Username" class="col-sm-3" type="text" name="Username" placeholder="Enter your username...">
+               <span class="error"></span>
            </div>        
            <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Email: </label><input class="col-sm-3" type="text" name="Email" placeholder="Enter your email...">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Email: </label>
+               <input id="Email" class="col-sm-3" type="text" name="Email" placeholder="Enter your email...">
+               <span class="error"></span>
            </div>           
            <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Phone Number: </label><input class="col-sm-3" type="text" name="PhoneNumber" placeholder="Enter your phone number...">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Phone Number: </label>
+               <input id="PhoneNumber" class="col-sm-3" type="text" name="PhoneNumber" placeholder="Enter your phone number...">
+               <span class="error"></span>
            </div>              
            <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Password: </label><input class="col-sm-3" type="password" name="Password" placeholder="Enter your password...">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Password: </label>
+               <input id="Password" class="col-sm-3" type="password" name="Password" placeholder="Enter your password...">
+               <span class="error"></span>
            </div>         
            <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Confirm Password: </label><input class="col-sm-3" type="password" name="ConfirmPassword" placeholder="Confirm your password...">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Confirm Password: </label>
+               <input id="ConfirmPassword" class="col-sm-3" type="password" name="ConfirmPassword" placeholder="Confirm your password...">
+               <span class="error"></span>
            </div>         
            <div class="form-group">
                <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Gender: </label>

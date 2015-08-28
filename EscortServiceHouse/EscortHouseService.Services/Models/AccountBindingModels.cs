@@ -43,7 +43,7 @@ namespace EscortHouseService.Services.Models
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "Phone number")]
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
         [Required]
@@ -62,7 +62,7 @@ namespace EscortHouseService.Services.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Password", ErrorMessage = "The Password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
