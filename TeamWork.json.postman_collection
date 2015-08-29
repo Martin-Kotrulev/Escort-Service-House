@@ -1,0 +1,194 @@
+{
+	"id": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+	"name": "TeamWork",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "7d83ebb0-8827-6b99-3733-c784e1e77225",
+			"name": "GeustControler",
+			"description": "",
+			"write": true,
+			"order": [
+				"7047aa2c-45cb-ae0b-dded-59b7d3b02e4e"
+			],
+			"collection": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+			"owner": 0,
+			"collection_name": "TeamWork",
+			"collection_owner": 0,
+			"collection_id": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa"
+		},
+		{
+			"id": "8c636e48-398f-f3c9-c633-5efba861f9cf",
+			"name": "Register",
+			"description": "",
+			"write": true,
+			"order": [
+				"0d262aae-ee62-45d9-9ad3-4be14b4690f4",
+				"2da4a6f4-8166-abc2-fcf5-de86872b13b2"
+			],
+			"collection": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+			"owner": 0,
+			"collection_name": "TeamWork",
+			"collection_owner": 0,
+			"collection_id": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa"
+		}
+	],
+	"timestamp": 1440685931447,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "0d262aae-ee62-45d9-9ad3-4be14b4690f4",
+			"headers": "",
+			"url": "http://localhost:50825/api/Account/Register/Escort",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "escort1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "escort1@a.a",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phonenumber",
+					"value": "55666655",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "gender",
+					"value": "female",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "escort1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "confirmpassword",
+					"value": "escort1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "town",
+					"value": "sofia",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "height",
+					"value": "1.75",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "weight",
+					"value": "60",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1440863263768,
+			"name": "RegisterCustomer",
+			"description": "",
+			"collectionId": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+			"responses": []
+		},
+		{
+			"id": "2da4a6f4-8166-abc2-fcf5-de86872b13b2",
+			"headers": "",
+			"url": "http://localhost:50825/api/Account/Register/Escort",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+			"data": [
+				{
+					"key": "username",
+					"value": "rado_niko",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "radko@a.v",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phonenumber",
+					"value": "88888888",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "gender",
+					"value": "male",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "rado_niko",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "confirmpassword",
+					"value": "rado_niko",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "RegisterEscort",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1440862897434,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "8c636e48-398f-f3c9-c633-5efba861f9cf"
+		},
+		{
+			"id": "7047aa2c-45cb-ae0b-dded-59b7d3b02e4e",
+			"headers": "",
+			"url": "http://localhost:50825/api/guest/escorts",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1440863804545,
+			"name": "GuestGetsAllEscorts",
+			"description": "",
+			"collectionId": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+			"responses": []
+		}
+	]
+}
