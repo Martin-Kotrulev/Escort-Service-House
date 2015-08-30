@@ -23,9 +23,11 @@ using EscortServiceHouse.Data;
 
 namespace EscortHouseService.Services.Controllers
 {
+    using EscortService.Models;
+
     [Authorize]
     [RoutePrefix("api/Account")]
-    public class AccountController : ApiController
+    public class AccountController : BaseApiController
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
@@ -363,7 +365,6 @@ namespace EscortHouseService.Services.Controllers
                 return this.BadRequest(this.ModelState);
             }
 
-            var context = new EscortServiceHouseEntities();
             var user = new Customer()
             {
                 UserName = model.Username,
@@ -378,7 +379,7 @@ namespace EscortHouseService.Services.Controllers
             {
                 return this.GetErrorResult(result);
             }
-            var newUser = context.Users.FirstOrDefault(u => u.UserName == user.UserName);
+            var newUser = this.EscortServiceData.Users.FirstOrDefault(u => u.UserName == user.UserName);
             if (newUser != null)
             {
                 var roleUser = this.UserManager.AddToRole(newUser.Id, "customer");
@@ -397,7 +398,6 @@ namespace EscortHouseService.Services.Controllers
                 return this.BadRequest(this.ModelState);
             }
 
-            var context = new EscortServiceHouseEntities();
             var user = new Escort()
             {
                 UserName = model.Username,
@@ -406,7 +406,10 @@ namespace EscortHouseService.Services.Controllers
                 Gender = (Gender)Enum.Parse(typeof(Gender), model.Gender, true),
                 Town = model.Town,
                 Height = model.Height,
-                Weight = model.Weight
+                Weight = model.Weight,
+                BreastsType = (BreastsType)Enum.Parse(typeof(BreastsType), model.BreastsType, true),
+                Description = model.Description,
+                HairColour = model.HairColour
             };
 
             IdentityResult result = await this.UserManager.CreateAsync(user, model.Password);
@@ -415,10 +418,21 @@ namespace EscortHouseService.Services.Controllers
             {
                 return this.GetErrorResult(result);
             }
-            var newUser = context.Users.FirstOrDefault(u => u.UserName == user.UserName);
+            var newUser = this.EscortServiceData.Users.FirstOrDefault(u => u.UserName == user.UserName);
             if (newUser != null)
             {
                 var roleUser = this.UserManager.AddToRole(newUser.Id, "escort");
+                if (model.B64 != null)
+                {
+                    var newPicture = new Picture()
+                    {
+                        EscortId = newUser.Id,
+                        B64 = model.B64
+                    };
+
+                    this.EscortServiceData.Pictures.Add(newPicture);
+                    this.EscortServiceData.SaveChanges();
+                }
             }
 
             return this.Ok();

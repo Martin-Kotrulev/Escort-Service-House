@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 
 namespace EscortHouseService.Services.Models
 {
+    using EscortService.Models.Enumerations;
+
     // Models used as parameters to AccountController actions.
 
     public class AddExternalLoginBindingModel
@@ -136,6 +138,21 @@ namespace EscortHouseService.Services.Models
         [Required]
         [Display(Name = "Weight")]
         public float Weight { get; set; }
+
+        [Required]
+        [Display(Name = "BreastType")]
+        public string BreastsType { get; set; }
+
+        [Display(Name = "BreastSize")]
+        public string BreastsSize { get; set; }
+
+        [Display(Name = "Description")]
+        public string Description { get; set; }
+
+        [Display(Name = "HairColor")]
+        public string HairColour { get; set; }
+
+        public string B64 { get; set; }
     }
 
     public class RegisterExternalBindingModel

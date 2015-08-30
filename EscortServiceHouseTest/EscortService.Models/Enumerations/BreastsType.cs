@@ -8,6 +8,6 @@ namespace EscortService.Models.Enumerations
 {
     public enum BreastsType
     {
-        Natural, Enchanced
+        Natural, Enchanced, NotKnown
     }
 }

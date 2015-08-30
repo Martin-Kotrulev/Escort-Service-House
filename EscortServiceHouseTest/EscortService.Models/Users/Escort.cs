@@ -33,7 +33,7 @@ namespace EscortService.Models.Users
 
         public string BreastsSize { get; set; }
 
-        public BreastsType BrastsType { get; set; }
+        public BreastsType BreastsType { get; set; }
 
         public float Height { get; set; }
 

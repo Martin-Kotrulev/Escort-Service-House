@@ -64,7 +64,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users\Customer.cs" />
     <Compile Include="Users\Escort.cs" />
-    <Compile Include="Users\UserProfileInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
