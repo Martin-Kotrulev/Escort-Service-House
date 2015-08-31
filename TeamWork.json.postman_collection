@@ -3,16 +3,34 @@
 	"name": "TeamWork",
 	"description": "",
 	"order": [
-		"57128533-45de-de09-f116-d889c33180a0"
+		"57128533-45de-de09-f116-d889c33180a0",
+		"089ae388-f6cd-58ae-f2aa-d97197502032"
 	],
 	"folders": [
+		{
+			"id": "00f2a9d8-0b12-dc76-01bf-36b919f94e0c",
+			"name": "CustomerController",
+			"description": "",
+			"write": true,
+			"order": [
+				"5a2ba352-b20a-693a-43e7-74357f749bd0",
+				"46da1ba2-3f1a-40c6-0a70-2df2ecdbb4bd"
+			],
+			"collection": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+			"owner": 0,
+			"collection_name": "TeamWork",
+			"collection_owner": 0,
+			"collection_id": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa"
+		},
 		{
 			"id": "c174e6b8-a848-3e69-b56a-00b78a8b89ec",
 			"name": "EscortController",
 			"description": "",
 			"write": true,
 			"order": [
-				"0367c959-db2d-b2ba-e438-913bc823b8fe"
+				"0367c959-db2d-b2ba-e438-913bc823b8fe",
+				"16d4de1e-ab2b-8b95-e71d-62dce21d31a8",
+				"a425ccf0-dc48-8f51-f768-e61d1286d8e3"
 			],
 			"collection": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
 			"owner": 0,
@@ -74,6 +92,39 @@
 			"description": "",
 			"collectionId": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
 			"responses": []
+		},
+		{
+			"id": "089ae388-f6cd-58ae-f2aa-d97197502032",
+			"headers": "",
+			"url": "http://localhost:50825/api/account/login",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+			"data": [
+				{
+					"key": "username",
+					"value": "escort2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "escort2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "Login User",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1441036662410,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
 		},
 		{
 			"id": "0d262aae-ee62-45d9-9ad3-4be14b4690f4",
@@ -162,6 +213,25 @@
 			"responses": []
 		},
 		{
+			"id": "16d4de1e-ab2b-8b95-e71d-62dce21d31a8",
+			"headers": "Authorization: Bearer LA6IDjfQ7uVYEjhFitCHxY-fhP1c6AtrcT1fH8x36A5-ThKWWtrnvps95SExukdEG1QpjUkz7bJXevB26bshsazrJUOLgeopfARBt_5P1KgM9JI1wLJuZCAlSvAyjntIFOzTzFawhoyoFwb1u-RtBSuae7LgWj_hT0-DzSnzVShZBm3qRL0CTi9dS2_DT_wKewxS_k_JX9p2V5DGixoaqGdMfCgk4cIZtgGObn_yV_Zg7h2VxU4e-jQOjeLvGmRi-bkUzw0D-KKbCrniCnDf3I0wI779EX3zCrumr-SzMLaIoxVTJCGuRfIdcrqJk3kZd_K5Wv7M_qFNgaf9jm7LugMET7kbsvZWh5n9dUk7brGf1W7G4bHGfWn-oCYa-CYyxRsTyslY2DXpX_5iWg1QkwKOSrAdv2Cj5WIk7V2bUP7f48mVCh02BN4N_LC6IZAdL4nX3PAtVuI0Lx_MaV-QBYUvjhjxtSM7WgQ1EILYhOUNRYuJRBS8kmVgEUAQCd9q\n",
+			"url": "http://localhost:50825/api/escort/pricelist",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441039313212,
+			"name": "GetPriceList",
+			"description": "",
+			"collectionId": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+			"responses": []
+		},
+		{
 			"id": "2da4a6f4-8166-abc2-fcf5-de86872b13b2",
 			"headers": "",
 			"url": "http://localhost:50825/api/Account/Register/Customer",
@@ -218,6 +288,56 @@
 			"responses": []
 		},
 		{
+			"id": "46da1ba2-3f1a-40c6-0a70-2df2ecdbb4bd",
+			"headers": "Authorization: Bearer 9ImP-Cu8zjC0wmepj4n5Ve8eYLxKvJFkdXjsdJc9Q7VM2fbdbtDRm85Hf-c-D8k7nYDz1EiAnHr0IA7nnv-CLtxW1rb_kWRNhMpTNWR9LJ8oDgNMzR6AbiEmo8CYcHF3ElWvXCYdt0xrlDmwSKoNGiqd4kgdLxAWxnUMYaB84INcG8TB4vWBfyrp9Jqc9HH8BYdCXGt1BexwibSQe1CP4qkOmoAfH4_HwHA3qz-khQ0w6ChKfDbcXeHCXLnapQHd-Kzd_ZfuQFujOZkQd-x3KAu93ys-V3duSqYgg7z6_UteewSQ1bX-eMzrLlZKJUN4TDfuBHr6rq6aLldIFbQmiadulAaQWfs2oE0z2CTP_TCdj8AO6q-osKW4KJNEwHZgvAcdrrtwLra0LtigIMOXDCblaZvZbaB5jynvpfetN49c-u9VTOiVonhbBx91EB-qavMhS2xtoAaLKokAbvO6iTgvhDXB_2QBUvJ5URusZBRMTIxRUS__w-KJ9HT7TsxnC_i7WwSRr8pBIwFPRVSrdQ\n",
+			"url": "http://localhost:50825/api/customer/appointment/submit",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "starttime",
+					"value": "2015/5/17",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "endtime",
+					"value": "2015/5/18",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "price",
+					"value": "150",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location",
+					"value": "Sofia",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "escortname",
+					"value": "escort2",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441046663516,
+			"name": "AppointmentSubmit",
+			"description": "",
+			"collectionId": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+			"responses": []
+		},
+		{
 			"id": "57128533-45de-de09-f116-d889c33180a0",
 			"headers": "",
 			"url": "http://localhost:50825/token ",
@@ -256,6 +376,25 @@
 			"responses": []
 		},
 		{
+			"id": "5a2ba352-b20a-693a-43e7-74357f749bd0",
+			"headers": "Authorization: Bearer 9ImP-Cu8zjC0wmepj4n5Ve8eYLxKvJFkdXjsdJc9Q7VM2fbdbtDRm85Hf-c-D8k7nYDz1EiAnHr0IA7nnv-CLtxW1rb_kWRNhMpTNWR9LJ8oDgNMzR6AbiEmo8CYcHF3ElWvXCYdt0xrlDmwSKoNGiqd4kgdLxAWxnUMYaB84INcG8TB4vWBfyrp9Jqc9HH8BYdCXGt1BexwibSQe1CP4qkOmoAfH4_HwHA3qz-khQ0w6ChKfDbcXeHCXLnapQHd-Kzd_ZfuQFujOZkQd-x3KAu93ys-V3duSqYgg7z6_UteewSQ1bX-eMzrLlZKJUN4TDfuBHr6rq6aLldIFbQmiadulAaQWfs2oE0z2CTP_TCdj8AO6q-osKW4KJNEwHZgvAcdrrtwLra0LtigIMOXDCblaZvZbaB5jynvpfetN49c-u9VTOiVonhbBx91EB-qavMhS2xtoAaLKokAbvO6iTgvhDXB_2QBUvJ5URusZBRMTIxRUS__w-KJ9HT7TsxnC_i7WwSRr8pBIwFPRVSrdQ\n",
+			"url": "http://localhost:50825/api/customer/get",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441046641277,
+			"name": "GetCustomerProfile",
+			"description": "",
+			"collectionId": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+			"responses": []
+		},
+		{
 			"id": "6133f8be-f061-141c-8e2a-9794c0b42f0b",
 			"headers": "",
 			"url": "http://localhost:50825/api/guest/escorts/159cbfa5-e38b-4ce3-be16-e9f0f5c117a0",
@@ -289,6 +428,38 @@
 			"helperAttributes": {},
 			"time": 1440863804545,
 			"name": "GuestGetsAllEscorts",
+			"description": "",
+			"collectionId": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
+			"responses": []
+		},
+		{
+			"id": "a425ccf0-dc48-8f51-f768-e61d1286d8e3",
+			"headers": "Authorization: Bearer LA6IDjfQ7uVYEjhFitCHxY-fhP1c6AtrcT1fH8x36A5-ThKWWtrnvps95SExukdEG1QpjUkz7bJXevB26bshsazrJUOLgeopfARBt_5P1KgM9JI1wLJuZCAlSvAyjntIFOzTzFawhoyoFwb1u-RtBSuae7LgWj_hT0-DzSnzVShZBm3qRL0CTi9dS2_DT_wKewxS_k_JX9p2V5DGixoaqGdMfCgk4cIZtgGObn_yV_Zg7h2VxU4e-jQOjeLvGmRi-bkUzw0D-KKbCrniCnDf3I0wI779EX3zCrumr-SzMLaIoxVTJCGuRfIdcrqJk3kZd_K5Wv7M_qFNgaf9jm7LugMET7kbsvZWh5n9dUk7brGf1W7G4bHGfWn-oCYa-CYyxRsTyslY2DXpX_5iWg1QkwKOSrAdv2Cj5WIk7V2bUP7f48mVCh02BN4N_LC6IZAdL4nX3PAtVuI0Lx_MaV-QBYUvjhjxtSM7WgQ1EILYhOUNRYuJRBS8kmVgEUAQCd9q\n",
+			"url": "http://localhost:50825/api/escort/pricelist/edit",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PATCH",
+			"data": [
+				{
+					"key": "HourRate",
+					"value": "20",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ThreeHoursRate",
+					"value": "50",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441041329215,
+			"name": "EditEscortPriceList",
 			"description": "",
 			"collectionId": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
 			"responses": []
