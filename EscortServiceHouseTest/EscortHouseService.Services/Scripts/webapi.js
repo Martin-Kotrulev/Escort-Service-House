@@ -1,10 +1,16 @@
 ﻿var escortRegisterUrl = "http://localhost:50825/api/account/register/escort";
 var customerRegisterUrl = "http://localhost:50825/api/account/register/customer";
+var loginUrl = "http://localhost:50825/Token";
 
 $(document).ready( function() {
     $('.profnav').hide();
     $('.escort-extra').hide();
 });
+
+function logoff() {
+    document.cookie = "";
+
+}
 
 function changeForm() {
     $('.error').text("");
@@ -19,7 +25,7 @@ function changeForm() {
 var clearRegisterPanel = function () {
     $('#reg').fadeOut();
     $('.navbar-form').hide();
-    $('#navbar').hide();
+    $('.navbar-toggle').hide();
     $('.profnav').fadeIn();
 };
 
