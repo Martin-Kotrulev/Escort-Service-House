@@ -40,7 +40,7 @@
             margin-top: 25px;
         }
         .footer {
-            position: absolute;
+            position: relative;
             bottom: 5px;
             top:auto;
         }
@@ -80,8 +80,7 @@
               <li role="presentation" class="active"><a href="#">Home</a></li>
               <li role="presentation"><a href="#">Profile</a></li>
               <li role="presentation"><a href="#">Messages</a></li>
-          </ul>
-          
+          </ul>  
       </div>
     </nav>
     <div class="container jcont">
@@ -97,7 +96,7 @@
         <button type="button" class="btn btn-warning col-sm-8 col-sm-offset-2">Continue as Guest -></button>
     </div>
     <div class="container">
-        <form id="reg" class="form-horizontal" role="form" runat="server" onsubmit="register(); return false;">
+        <form method="post" id="reg" class="form-horizontal" role="form" runat="server" onsubmit="register(); return false;">
            <div class="form-group">
                <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Username: </label>
                <input id="Username" class="col-sm-3" type="text" name="Username" placeholder="Enter your username...">

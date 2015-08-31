@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head id="head" runat="server">
     <meta charset="utf-8">
@@ -40,7 +40,7 @@
             margin-top: 25px;
         }
         .footer {
-            position: absolute;
+            position: relative;
             bottom: 5px;
             top:auto;
         }
@@ -54,7 +54,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top"> <!-- Navigation bar-->
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -79,12 +79,12 @@
           <ul class="nav nav-pills navbar-right profnav" role="tablist">
               <li role="presentation" class="active"><a href="#">Home</a></li>
               <li role="presentation"><a href="#">Profile</a></li>
-              <li role="presentation"><a href="#">Messages</a></li>
-          </ul>
-          
+              <li role="presentation"><a href="#">Logout</a></li>
+          </ul> 
       </div>
-    </nav>
-    <div class="container jcont">
+    </nav> <!--End navigation bar-->
+
+    <div class="container jcont"> <!--Logo-->
         <div class="jumbotron">
             <h1>The Red Barroness</h1>
             <p>Wellcome to the world of pleasure...</p>
@@ -95,9 +95,10 @@
     </div>
     <div class="container guest">
         <button type="button" class="btn btn-warning col-sm-8 col-sm-offset-2">Continue as Guest -></button>
-    </div>
-    <div class="container">
-        <form id="reg" class="form-horizontal" role="form" runat="server" onsubmit="register(); return false;">
+    </div> <!--End logo-->
+
+    <div class="container"> <!--Registration panel-->
+        <form method="post" id="reg" class="form-horizontal" role="form" runat="server" onsubmit="register(); return false;">
            <div class="form-group">
                <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Username: </label>
                <input id="Username" class="col-sm-3" type="text" name="Username" placeholder="Enter your username...">
@@ -130,12 +131,44 @@
            </div>  
            <div class="form-group">
                <label class="control-label col-sm-4 col-xs-3 col-sm-offset-1">Profile Type: </label>
-               <label class="radio-inline col-sm-2"><input type="radio" name="Role" value="Customer" checked>Only Pleasure</label>
-               <label class="radio-inline col-sm-3"><input type="radio" name="Role" value="Escort">Work and Pleasure</label>
+               <label class="radio-inline col-sm-2"><input type="radio" name="Role" value="Customer" onclick="changeForm()" checked>Only Pleasure</label>
+               <label class="radio-inline col-sm-3"><input type="radio" name="Role" value="Escort" onclick="changeForm()">Work and Pleasure</label>
            </div>
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Town: </label>
+               <input id="Town" class="col-sm-3" type="text" name="Town" placeholder="Enter your town...">
+               <span class="error"></span>
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Height (in meters): </label>
+               <input id="Height" class="col-sm-3" type="number" name="Height" placeholder="Enter your height...">
+               <span class="error"></span>
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Weight (in kilos): </label>
+               <input id="Weight" class="col-sm-3" type="number" name="Weight" placeholder="Enter your weight...">
+               <span class="error"></span>
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Breast Type: </label>
+               <input id="BreastType" class="col-sm-3" type="text" name="BreastType" placeholder="Enter your breast type...">
+               <span class="error"></span>
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Breast Size (optional): </label>
+               <input id="BreastSize" class="col-sm-3" type="text" name="BreastSize" placeholder="Enter your breast size...">
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Hair Color (optional): </label>
+               <input id="HairColor" class="col-sm-3" type="text" name="HairColor" placeholder="Enter your hair color...">
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Description (optional): </label>
+               <textarea rows="4" id="Description" class="col-sm-3" type="text" name="Description" placeholder="Enter your description..."></textarea>
+           </div> 
            <button type="submit" class="btn btn-success col-sm-6 col-sm-offset-3">Register</button>
         </form>
-    </div> <!-- registration-->   
+    </div> <!-- End registration panel-->   
     
     <footer class="footer">
       <div class="container">

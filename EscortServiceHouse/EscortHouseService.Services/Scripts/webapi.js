@@ -1,6 +1,7 @@
 ﻿var uri = "http://localhost:50825/api/account/register";
 
-$(document).ready( function() {
+$(document).ready(function () {
+    alert("load");
     $('.profnav').hide();
 });
 

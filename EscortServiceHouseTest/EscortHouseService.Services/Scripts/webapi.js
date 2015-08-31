@@ -1,17 +1,29 @@
-﻿var uri = "http://localhost:50825/api/account/register";
+﻿var escortRegisterUrl = "http://localhost:50825/api/account/register/escort";
+var customerRegisterUrl = "http://localhost:50825/api/account/register/customer";
 
 $(document).ready( function() {
     $('.profnav').hide();
+    $('.escort-extra').hide();
 });
 
-var clearTheRegisterForm = function (username) {
+function changeForm() {
+    $('.error').text("");
+    var role = $('input[name="Role"]:checked').val();
+    if (role === "Escort") {
+        $('.escort-extra').fadeIn();
+    } else if (role === "Customer") {
+        $('.escort-extra').fadeOut();
+    }
+}
+
+var clearRegisterPanel = function () {
     $('#reg').fadeOut();
     $('.navbar-form').hide();
     $('#navbar').hide();
     $('.profnav').fadeIn();
 };
 
-var manageError = function (xhr, status, error) {
+var manageErrorJson = function (xhr, status, error) {
     var response = JSON.parse(xhr.responseText),
         ms = response["ModelState"];
     for (var state in ms) {
@@ -33,13 +45,12 @@ var manageError = function (xhr, status, error) {
     }
 };
 
-function register() {
-    var data = {
+function registerCustomer() {
+    var customer = {
         "Username": $('input[name="Username"]').val(),
         "Email": $('input[name="Email"]').val(),
         "PhoneNumber": $('input[name="PhoneNumber"]').val(),
         "Gender": $('input[name="Gender"]:checked').val(),
-        "Role": $('input[name="Role"]:checked').val(),
         "Password": $('input[name="Password"]').val(),
         "ConfirmPassword": $('input[name="ConfirmPassword"]').val()
     };
@@ -47,14 +58,54 @@ function register() {
     $('.error').text(""); // Clear the errors for the input fields
 
     $.ajax({
-        url: uri,
+        url: customerRegisterUrl,
         type: 'POST',
-        data: data,
+        data: customer,
         success: function () {
-            clearTheRegisterForm();
-            $('#regComplete').text('Registration completed successfully. Welcome ' + data['Username'] + '!');
+            clearRegisterPanel();
+            $('#regComplete').text('Registration completed successfully. Welcome ' + customer['Username'] + '!');
             $('.btn-warning').removeClass('btn-warning').addClass('btn-success').text('Proceed to the gallery ->');
         },
-        error: manageError
+        error: manageErrorJson
     });
-};
+}
+
+function registerEscort() {
+    var escort = {
+        "Username": $('input[name="Username"]').val(),
+        "Email": $('input[name="Email"]').val(),
+        "PhoneNumber": $('input[name="PhoneNumber"]').val(),
+        "Gender": $('input[name="Gender"]:checked').val(),
+        "Password": $('input[name="Password"]').val(),
+        "ConfirmPassword": $('input[name="ConfirmPassword"]').val(),
+        "Town": $('input[name="Town"]').val(),
+        "Height": $('input[name="Height"]').val(),
+        "Weight": $('input[name="Weight"]').val(),
+        "BreastType": $('input[name="BreastType"]').val(),
+        "BreastSize": $('input[name="BreastSize"]').val(),
+        "HairColor": $('input[name="HairColor"]').val(),
+        "Description": $('textarea[name="Description"]').val()
+    };
+
+    $.ajax({
+        url: escortRegisterUrl,
+        type: 'POST',
+        data: escort,
+        success: function () {
+            clearTheRegisterForm();
+            $('#regComplete').text('Registration completed successfully. Welcome ' + escort['Username'] + '!');
+            $('.btn-warning').removeClass('btn-warning').addClass('btn-success').text('Proceed to the gallery ->');
+        },
+        error: manageErrorJson
+    });
+}
+
+function register() {
+    var status = $('input[name="Role"]:checked').val();
+    if (status === "Escort") {
+        registerEscort();
+    } else if (status == "Customer") {
+        registerCustomer();
+    }
+}
+
