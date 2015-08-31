@@ -16,6 +16,8 @@ namespace EscortHouseService.Services
 {
     public partial class Startup
     {
+        public const string TokenEndpointPath = "/token";
+
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
 
         public static string PublicClientId { get; private set; }
