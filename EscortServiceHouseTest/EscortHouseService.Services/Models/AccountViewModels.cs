@@ -27,11 +27,15 @@ namespace EscortHouseService.Services.Models
 
     public class UserInfoViewModel
     {
-        public string Email { get; set; }
+        public string UserId { get; set; }
+
+        public string Username { get; set; }
 
         public bool HasRegistered { get; set; }
 
         public string LoginProvider { get; set; }
+
+        public List<string> Roles { get; set; }
     }
 
     public class UserLoginInfoViewModel

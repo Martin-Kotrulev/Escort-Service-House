@@ -64,11 +64,17 @@ namespace EscortHouseService.Services.Controllers
         {
             ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
 
+            var userId = User.Identity.GetUserId();
+            var context = new EscortServiceHouseEntities();
+            var user = context.Users.Find(userId);
+
             return new UserInfoViewModel
             {
-                Email = User.Identity.GetUserName(),
+                UserId = User.Identity.GetUserId(),
+                Username = User.Identity.GetUserName(),
                 HasRegistered = externalLogin == null,
-                LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
+                LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null,
+                Roles = user.Roles.Select(r => context.Roles.Find(r.RoleId).Name).ToList()
             };
         }
 

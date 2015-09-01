@@ -1,0 +1,16 @@
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\EscortServiceHouse.Data.dll.config
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\EscortServiceHouse.Data.dll
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\EscortServiceHouse.Data.pdb
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\EntityFramework.dll
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\EscortService.Models.dll
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\EscortService.Models.pdb
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\EntityFramework.xml
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\obj\Debug\EscortServiceHouse.Data.csprojResolveAssemblyReference.cache
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\obj\Debug\EscortServiceHouse.Data.dll
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortServiceHouse.Data\obj\Debug\EscortServiceHouse.Data.pdb

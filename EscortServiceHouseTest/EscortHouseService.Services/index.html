@@ -51,6 +51,12 @@
             color: green;
             text-align:center;
         }
+        #profPic {
+            border: 1px solid black;
+        }
+        #login_error {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -66,19 +72,19 @@
           <a class="navbar-brand" href="#">The Red Barroness</a>  
         </div>
           <div id="navbar" class="navbar-collapse collapse">
-              <form class="navbar-form navbar-right">
+              <form method="post" class="navbar-form navbar-right" onsubmit="login(); return false;">
                   <div class="form-group">
-                      <input type="text" placeholder="Username" class="form-control">
+                      <input id="usr_name" type="text" placeholder="Username" class="form-control">
                   </div>
                   <div class="form-group">
-                      <input type="password" placeholder="Password" class="form-control">
+                      <input id="usr_pass" type="password" placeholder="Password" class="form-control">
                   </div>
                   <button type="submit" class="btn btn-success">Sign in</button>
               </form>
               <ul class="nav nav-pills navbar-right profnav" role="tablist">
-                  <li role="presentation" class="active"><a href="#">Home</a></li>
-                  <li role="presentation"><a href="#">Profile</a></li>
-                  <li role="presentation"><a href="#" onclick="logoff()">Logout</a></li>
+                  <li role="presentation"><a id="home_btn" href="#">Profile</a></li>
+                  <li role="presentation"><a class="escort-btn" href="#">Appointmens</a></li>
+                  <li role="presentation"><a href="#" onclick="logout()">Logout</a></li>
               </ul> 
           </div><!--/.navbar-collapse -->    
       </div>
@@ -92,6 +98,9 @@
     </div>
     <div class="container">
         <h2 id="regComplete"></h2>
+    </div>
+    <div class="container">
+        <h2 id="login_error"></h2>
     </div>
     <div class="container guest">
         <button type="button" class="btn btn-warning col-sm-8 col-sm-offset-2">Continue as Guest -></button>
@@ -136,23 +145,46 @@
            </div>
            <div class="form-group escort-extra">
                <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Town: </label>
-               <input id="Town" class="col-sm-3" type="text" name="Town" placeholder="Enter your town...">
-               <span class="error"></span>
+               <select form="reg" id="Town" class="col-sm-3" type="text" name="Town">
+                  <option value="Sofia" selected>Sofia</option>
+                  <option value="Plovdiv">Plovdiv</option>
+                  <option value="Varna">Varna</option>
+                  <option value="Burgas">Burgas</option>
+                  <option value="Ruse">Ruse</option>
+                  <option value="Stara Zagora">Stara Zagora</option>
+                  <option value="Pleven">Pleven</option>
+                  <option value="Sliven">Sliven</option>
+                  <option value="Dobrich">Dobrich</option>
+                  <option value="Shumen">Shumen</option>
+                  <option value="Pernik">Pernik</option>
+                  <option value="Haskovo">Haskovo</option>
+                  <option value="Yambol">Yambol</option>
+                  <option value="Pazardzhik">Pazardzhik</option>
+                  <option value="Blagoevgrad">Blaogevgrad</option>
+                  <option value="Veliko Tarnovo">Veliko Tarnovo</option>
+                  <option value="Vratza">Vratza</option>
+                  <option value="Gabrovo">Gabrovo</option>
+                  <option value="Asenovgrad">Asenovgrad</option>
+                   <option value="Vidin">Vidin</option>
+                </select>
            </div> 
            <div class="form-group escort-extra">
                <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Height (in meters): </label>
-               <input id="Height" class="col-sm-3" type="number" name="Height" placeholder="Enter your height...">
+               <input id="Height" class="col-sm-3" type="text" name="Height" placeholder="Enter your height...">
                <span class="error"></span>
            </div> 
            <div class="form-group escort-extra">
                <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Weight (in kilos): </label>
-               <input id="Weight" class="col-sm-3" type="number" name="Weight" placeholder="Enter your weight...">
+               <input id="Weight" class="col-sm-3" type="text" name="Weight" placeholder="Enter your weight...">
                <span class="error"></span>
            </div> 
            <div class="form-group escort-extra">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Breast Type: </label>
-               <input id="BreastType" class="col-sm-3" type="text" name="BreastType" placeholder="Enter your breast type...">
-               <span class="error"></span>
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Breasts Type: </label>
+               <select form="reg" id="BreastsType" class="col-sm-3" type="text" name="BreastsType">
+                  <option value="Natural" selected>Natural</option>
+                  <option value="Enchanced">Enchanced</option>
+                  <option value="NotKnown">Unknown</option>
+                </select>
            </div> 
            <div class="form-group escort-extra">
                <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Breast Size (optional): </label>
@@ -165,6 +197,11 @@
            <div class="form-group escort-extra">
                <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Description (optional): </label>
                <textarea rows="4" id="Description" class="col-sm-3" type="text" name="Description" placeholder="Enter your description..."></textarea>
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Profile Picture (optional): </label>
+               <input id="B64" class "col-sm-3" type="file" name="B64" onchange="managePicture(this)">
+               <img id="profPic" class="img-responsive col-sm-3 col-xs-3" src="Content/unknown.png">
            </div> 
            <button type="submit" class="btn btn-success col-sm-6 col-sm-offset-3">Register</button>
         </form>
