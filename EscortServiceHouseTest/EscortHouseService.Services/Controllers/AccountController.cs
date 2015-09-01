@@ -24,6 +24,7 @@ using EscortServiceHouse.Data;
 namespace EscortHouseService.Services.Controllers
 {
     using EscortService.Models;
+    using Microsoft.Owin.Testing;
 
     [Authorize]
     [RoutePrefix("api/Account")]
@@ -362,10 +363,15 @@ namespace EscortHouseService.Services.Controllers
         //}
 
         // POST api/Account/Register/Customer
+        [HttpPost]
         [AllowAnonymous]
         [Route("Register/Customer")]
         public async Task<IHttpActionResult> RegisterCustomer(RegisterCustomerBindingModel model)
         {
+            if (model== null)
+            {
+                return this.BadRequest("Invalid user data");
+            }
             if (!this.ModelState.IsValid)
             {
                 return this.BadRequest(this.ModelState);
@@ -385,13 +391,22 @@ namespace EscortHouseService.Services.Controllers
             {
                 return this.GetErrorResult(result);
             }
+
             var newUser = this.EscortServiceData.Users.FirstOrDefault(u => u.UserName == user.UserName);
+
             if (newUser != null)
             {
                 var roleUser = this.UserManager.AddToRole(newUser.Id, "customer");
             }
 
-            return this.Ok();
+            //Auto login after registration (successful user registration should return access_token)
+            var loginResult = await this.LoginUser(new UserAccountInputModel()
+            {
+                Username = model.Username,
+                Password = model.Password
+            });
+
+            return loginResult;
         }
 
         // POST api/Account/Register/Escort
@@ -441,10 +456,45 @@ namespace EscortHouseService.Services.Controllers
                 }
             }
 
-            return this.Ok();
+            //Auto login after registration (successful user registration should return access_token)
+            var loginResult = await this.LoginUser(new UserAccountInputModel()
+            {
+                Username = model.Username,
+                Password = model.Password
+            });
+
+            return loginResult;
         }
 
-        // POST api/Account/RegisterExternal
+        // POST api/account/login
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("login")]
+        public async Task<IHttpActionResult> LoginUser(UserAccountInputModel model)
+        {
+            if (model == null)
+            {
+                return this.BadRequest("Invalid user data");
+            }
+
+            // Invoke the "token" OWIN service to perform the login (POST /api/token)
+            var testServer = TestServer.Create<Startup>();
+
+            var requestParams = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("grant_type", "password"),
+                new KeyValuePair<string, string>("username", model.Username),
+                new KeyValuePair<string, string>("password", model.Password)
+            };
+            var requestParamsFormIrlEncoded = new FormUrlEncodedContent(requestParams);
+            var tokenServiceRespond = await testServer.HttpClient.PostAsync(
+                Startup.TokenEndpointPath, requestParamsFormIrlEncoded);
+
+            return this.ResponseMessage(tokenServiceRespond);
+        }
+
+
+            // POST api/Account/RegisterExternal
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
         [Route("RegisterExternal")]
