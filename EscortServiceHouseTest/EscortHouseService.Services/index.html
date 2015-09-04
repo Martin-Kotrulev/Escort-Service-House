@@ -57,6 +57,26 @@
         #login_error {
             color: red;
         }
+        #escorts {
+            margin-top: 50px;
+            list-style-type: none;
+        }
+        #escorts li {
+            height: 300px;
+            border: 1px solid black;
+            margin-bottom: 25px;
+            overflow:hidden;
+        }
+        li>img {
+            position:absolute;
+            top:0;
+            left:0;
+            max-width: 100%;
+        }
+        #login_error {
+            margin-top: 35px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -103,7 +123,7 @@
         <h2 id="login_error"></h2>
     </div>
     <div class="container guest">
-        <button type="button" class="btn btn-warning col-sm-8 col-sm-offset-2">Continue as Guest -></button>
+        <button type="button" class="btn btn-warning col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2" onclick="enterGuestMode()">Continue as Guest -></button>
     </div> <!--End logo-->
 
     <div class="container"> <!--Registration panel-->
@@ -203,9 +223,14 @@
                <input id="B64" class "col-sm-3" type="file" name="B64" onchange="managePicture(this)">
                <img id="profPic" class="img-responsive col-sm-3 col-xs-3" src="Content/unknown.png">
            </div> 
-           <button type="submit" class="btn btn-success col-sm-6 col-sm-offset-3">Register</button>
+           <button type="submit" class="btn btn-success col-sm-6 col-xs-12 col-sm-offset-3">Register</button>
         </form>
     </div> <!-- End registration panel-->   
+    
+    <div class="container guest-results">
+        <ul id="escorts" class="row">
+        </ul>
+    </div>
     
     <footer class="footer">
       <div class="container">

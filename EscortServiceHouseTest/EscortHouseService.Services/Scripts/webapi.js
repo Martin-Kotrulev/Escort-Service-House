@@ -4,6 +4,7 @@ var loginUrl = "http://localhost:50825/Token";
 var profPicDefaultPath = "Content/unknown.png";
 var cookieDeleteDate = "01 Jan 1970 00:00:00 UTC";
 var userInfoUrl = "http://localhost:50825/api/account/UserInfo";
+var guestEscortUrl = "http://localhost:50825/api/guest/escorts";
 
 $(document).ready(function () {
     if (document.cookie) {
@@ -24,6 +25,25 @@ function showEscortProfile() {
     console.log("escort profile");
 }
 
+function enterGuestMode() {
+    $('#reg').hide();
+    clearLogoAndProceedButton();
+
+    $.ajax({
+        url: guestEscortUrl,
+        type: "GET",
+        success: function (data, text, xhr) {
+            var usersArr = JSON.parse(xhr.responseText);
+            for (var i in usersArr) {
+                var picture = usersArr[i]['Pictures'][0];
+
+                if (picture) {
+                    $('#escorts').append('<li class="col-lg-3 col-md-4 col-sm-6 col-xs-6"><img src="' + picture['B64']  + '"class="image-responsive"></li>');
+                }
+            }
+        }
+    });
+}
 function setLoggedView() {
     $('#login_error').text('');
     var cookies = document.cookie.split('; '),
@@ -51,6 +71,10 @@ function setLoggedView() {
 
     $('#home_btn').text(user);
     clearRegisterPanel();
+    clearLogoAndProceedButton();
+}
+
+function clearLogoAndProceedButton() {
     $('.jcont').hide();
     $('.guest').hide();
 }
@@ -86,6 +110,7 @@ function login() {
             document.cookie = 'access_token=' + access_token + '; expires=' + expires;
             document.cookie = 'token_type=' + token_type + '; expires=' + expires;
 
+            $('.profnav').fadeIn();
             setLoggedView();
         },
         error: function (xhr, status, error) {
@@ -96,8 +121,6 @@ function login() {
             $('#usr_pass').val('');
         }
     });
-
-    $('.profnav').fadeIn();
 };
 
 function logout() {

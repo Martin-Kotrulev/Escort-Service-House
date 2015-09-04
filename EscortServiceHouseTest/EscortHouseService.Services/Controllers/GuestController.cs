@@ -46,6 +46,4 @@ namespace EscortHouseService.Services.Controllers
             return this.Ok(result);
         }
     }
-
-
 }
