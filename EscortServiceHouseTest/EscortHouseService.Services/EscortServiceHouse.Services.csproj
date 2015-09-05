@@ -216,6 +216,7 @@
     <Compile Include="Controllers\EscortController.cs" />
     <Compile Include="Controllers\GuestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -223,6 +224,7 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BindingModel\EditPriceListBindingModel.cs" />
+    <Compile Include="Models\BindingModel\ReviewBindingModel.cs" />
     <Compile Include="Models\BindingModel\SubmitAppointmentBindingModel.cs" />
     <Compile Include="Models\UserAccountInputModel.cs" />
     <Compile Include="Models\ViewModels\AppointmentViewModel.cs" />
