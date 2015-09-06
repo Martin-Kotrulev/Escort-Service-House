@@ -65,6 +65,8 @@ namespace EscortHouseService.Services.Controllers
             var escortId =
                 this.EscortServiceData.Escorts.Where(c => c.UserName == appData.EscortName).Select(c => c.Id).First();
 
+
+            //We don't need to list all escort's appointments here. We can just check whether there is an appointment in this time period.
             var appointmentsForEscort = this.EscortServiceData.Appointments.Where(a => a.EscortId == escortId).ToList();
             var appStartTime = DateTime.Parse(appData.StartTime);
             var appEndTime = DateTime.Parse(appData.EndTime);
@@ -98,6 +100,36 @@ namespace EscortHouseService.Services.Controllers
                 this.Ok(String.Format(
                     "Appointment from customer with id: {0} to escort with username: {1} was submited", currentUserId,
                     appData.EscortName));
+        }
+
+        [HttpPatch]
+        [Route("appointment/{id}/cancel")]
+        public IHttpActionResult CancelAppointment([FromUri]int id)
+        {
+            var currentUserId = this.User.Identity.GetUserId();
+
+            var appointment = this.EscortServiceData.Appointments.Find(id);
+
+            if (appointment == null || appointment.CustomerId != currentUserId)
+            {
+                return this.BadRequest("Invalid appointment ID");
+            }
+
+            if (appointment.IsCanceled == true)
+            {
+                return this.BadRequest("Appointment already canceled");
+            }
+
+            if (appointment.EndTime < DateTime.Now)
+            {
+                return this.BadRequest("Appointment is no longer valid");
+            }
+
+            appointment.IsCanceled = true;
+
+            this.EscortServiceData.SaveChanges();
+
+            return this.Ok();
         }
     }
 }

@@ -9,6 +9,7 @@
     using Microsoft.AspNet.Identity;
     using Models.BindingModel;
     using Models.ViewModels;
+    using System;
 
     [Authorize]
     [RoutePrefix("api/escort")]
@@ -175,6 +176,118 @@
             {
                 Message = "Escort with id: " + escortId + "  patched."
             });
+        }
+
+        [HttpPatch]
+        [Route("appointments/{id}/cancel")]
+        public IHttpActionResult CancelAppointment([FromBody]int id)
+        {
+            var currentUserId = this.User.Identity.GetUserId();
+
+            var appointment = this.EscortServiceData.Appointments.Find(id);
+
+            if (appointment == null || appointment.EscortId != currentUserId)
+            {
+                return this.BadRequest("Invalid appointment ID");
+            }
+
+            if (appointment.IsCanceled == true)
+            {
+                return this.BadRequest("Appointment already canceled");
+            }
+
+            if (appointment.EndTime < DateTime.Now)
+            {
+                return this.BadRequest("Appointment is no longer valid");
+            }
+
+            appointment.IsCanceled = true;
+
+            this.EscortServiceData.SaveChanges();
+
+            return this.Ok();
+        }
+
+        [HttpPatch]
+        [Route("appointments/{id}/confirm")]
+        public IHttpActionResult ConfirmAppointment([FromUri]int id)
+        {
+            var currentUserId = this.User.Identity.GetUserId();
+
+            var appointment = this.EscortServiceData.Appointments.Find(id);
+
+            if (appointment == null || appointment.EscortId != currentUserId)
+            {
+                return this.BadRequest("Invalid appointment ID");
+            }
+
+            if (appointment.IsCanceled == true)
+            {
+                return this.BadRequest("Appointment already canceled");
+            }
+
+            if (appointment.IsApproved != null)
+            {
+                return this.BadRequest("Appointment state already set");
+            }
+
+            if (appointment.EndTime < DateTime.Now)
+            {
+                return this.BadRequest("Appointment is no longer valid");
+            }
+
+            if (this.EscortServiceData.Appointments.Any(a => a.EscortId == currentUserId &&
+                ((appointment.StartTime >= a.StartTime && appointment.StartTime <= a.EndTime) ||
+                (appointment.EndTime > a.StartTime && appointment.EndTime <= a.EndTime))))
+            {
+                return this.BadRequest("Escort occupied for that time period");
+            }
+
+            appointment.IsApproved = true;
+
+            this.EscortServiceData.SaveChanges();
+
+            return this.Ok();
+        }
+
+        public IHttpActionResult RejectAppointment([FromUri]int id)
+        {            
+            var currentUserId = this.User.Identity.GetUserId();
+
+            var appointment = this.EscortServiceData.Appointments.Find(id);
+
+            if (appointment == null || appointment.EscortId != currentUserId)
+            {
+                return this.BadRequest("Invalid appointment ID");
+            }
+
+            if (appointment.IsCanceled == true)
+            {
+                return this.BadRequest("Appointment already canceled");
+            }
+
+            if (appointment.IsApproved != null)
+            {
+                return this.BadRequest("Appointment state already set");
+            }
+
+            if (appointment.EndTime < DateTime.Now)
+            {
+                return this.BadRequest("Appointment is no longer valid");
+            }
+
+            if (this.EscortServiceData.Appointments.Any(a => a.EscortId == currentUserId &&
+                ((appointment.StartTime >= a.StartTime && appointment.StartTime <= a.EndTime) ||
+                (appointment.EndTime > a.StartTime && appointment.EndTime <= a.EndTime))))
+            {
+                return this.BadRequest("Escort occupied for that time period");
+            }
+
+            appointment.IsApproved = false;
+
+            this.EscortServiceData.SaveChanges();
+
+            return this.Ok();
         }
     }
 }

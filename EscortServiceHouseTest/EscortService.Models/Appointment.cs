@@ -27,7 +27,7 @@ namespace EscortService.Models
         public string Location { get; set; }
 
         [Required]
-        public bool IsApproved { get; set; }
+        public bool? IsApproved { get; set; }
 
         [Required]
         public bool IsCanceled { get; set; }
