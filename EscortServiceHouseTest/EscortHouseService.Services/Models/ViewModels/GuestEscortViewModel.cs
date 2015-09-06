@@ -11,28 +11,17 @@ namespace EscortHouseService.Services.Models.ViewModels
 
     public class GuestEscortViewModel
     {
-        private ICollection<PictureViewModel> pictures;
-
         public GuestEscortViewModel(Escort escort)
         {
             this.UserName = escort.UserName;
             this.Gender = escort.Gender.ToString();
-            this.pictures = new List<PictureViewModel>();
-
-            foreach (var picture in escort.Pictures)
-            {
-                this.pictures.Add(new PictureViewModel(picture));
-            }
+            this.B64Profile = escort.Pictures.FirstOrDefault(p => p.IsProfile == true).B64;
         }
 
         public string UserName { get; set; }
 
         public string Gender { get; set; }
 
-        public virtual ICollection<PictureViewModel> Pictures
-        {
-            get { return this.pictures; }
-            set { this.pictures = value; }
-        }
+        public string B64Profile { get; set; }
     }
 }

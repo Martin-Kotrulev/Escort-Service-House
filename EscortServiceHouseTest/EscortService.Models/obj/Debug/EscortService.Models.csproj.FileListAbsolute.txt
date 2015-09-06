@@ -77,6 +77,6 @@ C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortService.
 C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortService.Models\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortService.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortService.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortService.Models\obj\Debug\EscortService.Models.csprojResolveAssemblyReference.cache
 C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortService.Models\obj\Debug\EscortService.Models.dll
 C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortService.Models\obj\Debug\EscortService.Models.pdb
+C:\Users\martinbkotr\Dropbox\escortService\EscortServiceHouseTest\EscortService.Models\obj\Debug\EscortService.Models.csprojResolveAssemblyReference.cache

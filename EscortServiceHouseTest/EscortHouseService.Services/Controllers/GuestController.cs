@@ -8,6 +8,8 @@ namespace EscortHouseService.Services.Controllers
     using EscortService.Models.Users;
     using EscortServiceHouse.Data;
     using Models.ViewModels;
+    using Microsoft.Web;
+    using System.Web.Http.OData;
 
     [AllowAnonymous]
     [RoutePrefix("api/Guest")]
@@ -15,6 +17,7 @@ namespace EscortHouseService.Services.Controllers
     {
         [HttpGet]
         [Route("Escorts")]
+        [EnableQuery]
         public IHttpActionResult GetAllEscorts()
         {
             var escorts = this.EscortServiceData.Escorts;
@@ -30,22 +33,25 @@ namespace EscortHouseService.Services.Controllers
         }
 
         [HttpGet]
-        [Route("Escorts/{id}")]
-        public IHttpActionResult GetEscortsById(string id)
+        [Route("Escorts/count")]
+        public IHttpActionResult GetEscortsCount()
         {
-            Escort escort = this.EscortServiceData.Escorts
-                .FirstOrDefault(e => e.Id == id);
+            var result = this.EscortServiceData.Escorts.Count();
 
-            if (escort == null)
-            {
-                return this.NotFound();
-            }
+            return this.Ok(result);
+        }
 
-           GuestEscortDetailViewModel result = new GuestEscortDetailViewModel(escort);
+        [HttpGet]
+        [Route("Escorts/{name}")]
+        public IHttpActionResult GetEscortInfo(string name)
+        {
+            var escort = this.EscortServiceData.Escorts.FirstOrDefault(e => e.UserName == name);
+
+            if (escort == null) return this.BadRequest();
+
+            var result = new GuestEscortDetailViewModel(escort);
 
             return this.Ok(result);
         }
     }
-
-
 }

@@ -4,10 +4,12 @@ var loginUrl = "http://localhost:50825/Token";
 var profPicDefaultPath = "Content/unknown.png";
 var cookieDeleteDate = "01 Jan 1970 00:00:00 UTC";
 var userInfoUrl = "http://localhost:50825/api/account/UserInfo";
+var guestEscortUrl = "http://localhost:50825/api/guest/escorts";
+var guestEscortCountUrl = "http://localhost:50825/api/guest/escorts/count";
+var guestEscortDetailInfo = "http://localhost:50825/api/guest/escorts/";
 
 $(document).ready(function () {
     if (document.cookie) {
-        var cookies = document.cookie.split('; ');
         setLoggedView();
     } else {
         setForRegister();
@@ -22,6 +24,100 @@ function clearCookie() {
 
 function showEscortProfile() {
     console.log("escort profile");
+}
+
+function guestEscortInfo(element) {
+   
+    $.ajax({
+        url: guestEscortDetailInfo + element.name,
+        type: "GET",
+        success: function (data, text, xhr) {
+            var json = JSON.parse(xhr.responseText),
+                name = json['UserName'],
+                pic_src = json['B64Profile'],
+                desc = json['Description'],
+                price = json['HourRate'],
+                town = json['Town'];
+            $('#myModal').modal();
+            $('#myModal').on('shown.bs.modal', function () {
+                $("#modal_pic").attr('src', pic_src);
+                $('#mod_name').text(name);
+                $('#mod_desc').text(desc);
+                $('#mod_price').text(price + '$');
+                $('#mod_town').text(town);
+            });
+        }
+    });
+}
+
+function showPaginationResults(element) {
+    $('#login_error').text('');
+    var url = element.name;
+    $.ajax({
+        url: url,
+        type: "GET",
+        success: function (data, text, xhr) {
+            $('#escorts').empty();
+            var usersArr = JSON.parse(xhr.responseText);
+            for (var i in usersArr) {
+                var picture = usersArr[i]['B64Profile'];
+                if (picture) {
+                    $('#escorts').append('<li class="col-lg-3 col-md-4 col-sm-6 col-xs-6"><img src="'
+                        + picture
+                        + '" name="' + usersArr[i]['UserName'] + '" class="image-responsive" onclick="guestEscortInfo(this)"></li>');
+                }
+            }
+        }
+    });
+    $('.pagination>li[class="active"]').removeClass('active');
+    $('#' + element.id).parent().addClass('active');
+}
+
+function addPaginationSchema() {
+    $.ajax({
+        url: guestEscortCountUrl,
+        type: "GET",
+        success: function (data, text, xhr) {
+            var pages = Math.round(xhr.responseText / 8);
+            var skip = 0;
+            var top = 8;
+            if (pages > 1) {
+                for (var i = 0; i < pages; i++) {
+                    $('.pagination').append('<li id="page_'
+                        + i + '"><a href="#" id="href_' + i + '" name="'
+                        + guestEscortUrl + '?$top=' + top + '&$skip='
+                        + skip + '" onclick="showPaginationResults(this)">' + (i + 1) + '</a></li>');
+                    skip += top;
+                }
+                $('#page_0').addClass('active');
+                $('.pagination').show();
+            }
+        }
+    });
+}
+
+function showGuestGallery() {
+    $.ajax({
+        url: guestEscortUrl + '?$top=8',
+        type: "GET",
+        success: function (data, text, xhr) {
+            var usersArr = JSON.parse(xhr.responseText);
+            for (var i in usersArr) {
+                var picture = usersArr[i]['B64Profile'];
+                if (picture) {
+                    $('#escorts').append('<li class="col-lg-3 col-md-4 col-sm-6 col-xs-6"><img src="'
+                        + picture + '" name="' + usersArr[i]['UserName'] + '" class="image-responsive" onclick="guestEscortInfo(this)"></li>');
+                }
+            }
+        }
+    });
+}
+
+function enterGuestMode() {
+    $('#reg').hide();
+    clearLogoAndProceedButton();
+    addPaginationSchema();
+    showGuestGallery();
 }
 
 function setLoggedView() {
@@ -51,11 +147,16 @@ function setLoggedView() {
 
     $('#home_btn').text(user);
     clearRegisterPanel();
+    clearLogoAndProceedButton();
+}
+
+function clearLogoAndProceedButton() {
     $('.jcont').hide();
     $('.guest').hide();
 }
 
 function login() {
+    emptySearch();
     // Getting the user name and password from the login form
     // or when registering from the register from
     var user_name = $('#usr_name').val(),
@@ -86,6 +187,7 @@ function login() {
             document.cookie = 'access_token=' + access_token + '; expires=' + expires;
             document.cookie = 'token_type=' + token_type + '; expires=' + expires;
 
+            $('.profnav').fadeIn();
             setLoggedView();
         },
         error: function (xhr, status, error) {
@@ -96,9 +198,12 @@ function login() {
             $('#usr_pass').val('');
         }
     });
-
-    $('.profnav').fadeIn();
 };
+
+function emptySearch() {
+    $('#escorts').empty();
+    $('.pagination').empty();
+}
 
 function logout() {
     clearCookie();
@@ -140,6 +245,7 @@ function setForRegister() {
     $('#login_error').text('');
     $('.jcont').fadeIn();
     $('.guest').fadeIn();
+    emptySearch();
 }
 
 function changeForm() {
@@ -202,7 +308,7 @@ function registerCustomer() {
         data: customer,
         success: function () {
             clearRegisterPanel();
-            $('#regComplete').text('Registration completed successfully. Welcome ' + escort['Username'] + '!');
+            $('#regComplete').text('Registration completed successfully. Welcome ' + customer['Username'] + '!');
             showProceedBtn();
         },
         error: manageErrorJson

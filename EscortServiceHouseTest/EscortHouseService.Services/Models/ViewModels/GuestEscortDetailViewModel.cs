@@ -5,6 +5,7 @@
     using EscortService.Models;
     using EscortService.Models.Enumerations;
     using EscortService.Models.Users;
+    using System.Linq;
 
     public class GuestEscortDetailViewModel : GuestEscortViewModel
     {
@@ -12,39 +13,20 @@
 
         public GuestEscortDetailViewModel(Escort escort) : base(escort)
         {
-            this.Description = escort.Description;
-            this.HairColour = escort.HairColour;
-            this.BreastsSize = escort.BreastsSize;
-            this.BreastsType = escort.BreastsType.ToString();
-            this.Height = escort.Height;
-            this.Weight = escort.Weight;
-            this.Town = escort.Town;
-            //this.pictures = new List<PictureViewModel>();
-
-            //foreach (var picture in escort.Pictures)
-            //{
-            //    this.pictures.Add(new PictureViewModel(picture));
-            //}
+            this.Description = escort.Description == null ? "--" : escort.Description;
+            this.Town = escort.Town;           
+            this.Pictures = escort.Pictures.Select(p => p.B64).ToArray();
+            var prices = escort.Prices;
+            if (prices == null) this.HourRate = "--";
+            else this.HourRate = prices.HourRate.ToString();
         }
 
         public string Description { get; set; }
 
-        public string HairColour { get; set; }
-
-        public string BreastsSize { get; set; }
-
-        public string BreastsType { get; set; }
-
-        public float Height { get; set; }
-
-        public float Weight { get; set; }
-
         public string Town { get; set; }
 
-        //public virtual ICollection<PictureViewModel> Pictures
-        //{
-        //    get { return this.pictures; }
-        //    set { this.pictures = value; }
-        //}
+        public string HourRate { get; set; }
+
+        public string[] Pictures { get; set; }
     }
 }

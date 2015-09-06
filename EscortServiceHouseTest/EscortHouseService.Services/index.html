@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-<head id="head" runat="server">
+<head id="head">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,6 +57,47 @@
         #login_error {
             color: red;
         }
+        #escorts {
+            margin-top: 50px;
+            list-style-type: none;
+        }
+        #escorts li {
+            height: 250px;
+            margin-bottom: 25px;
+            overflow:hidden;
+            border: 2px solid blueviolet;
+            border-radius: 40%;
+        }
+        li>img {
+            position:absolute;
+            top:0;
+            left:0;
+            width: 100%;
+        }
+        li>img:hover {
+            opacity: 0.4;
+        }
+        #login_error {
+            margin-top: 35px;
+            text-align: center;
+        }
+        .pagination {
+            display: none;
+            margin: auto;
+        }
+        .modal {
+            display: none;
+        }
+        #desc {
+            display: block;
+        }
+        .info-head {
+            color: blueviolet;
+            font-size: 1.7em;
+        }
+        #myModal p {
+            font-size: 1.3em;
+        }
     </style>
 </head>
 <body>
@@ -103,11 +144,11 @@
         <h2 id="login_error"></h2>
     </div>
     <div class="container guest">
-        <button type="button" class="btn btn-warning col-sm-8 col-sm-offset-2">Continue as Guest -></button>
+        <button type="button" class="btn btn-warning col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2" onclick="enterGuestMode()">Continue as Guest -></button>
     </div> <!--End logo-->
 
     <div class="container"> <!--Registration panel-->
-        <form method="post" id="reg" class="form-horizontal" role="form" runat="server" onsubmit="register(); return false;">
+        <form method="post" id="reg" class="form-horizontal" role="form" onsubmit="register(); return false;">
            <div class="form-group">
                <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Username: </label>
                <input id="Username" class="col-sm-3" type="text" name="Username" placeholder="Enter your username...">
@@ -200,13 +241,36 @@
            </div> 
            <div class="form-group escort-extra">
                <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Profile Picture (optional): </label>
-               <input id="B64" class "col-sm-3" type="file" name="B64" onchange="managePicture(this)">
+               <input id="B64" class="col-sm-3" type="file" name="B64" onchange="managePicture(this)">
                <img id="profPic" class="img-responsive col-sm-3 col-xs-3" src="Content/unknown.png">
            </div> 
-           <button type="submit" class="btn btn-success col-sm-6 col-sm-offset-3">Register</button>
+           <button type="submit" class="btn btn-success col-sm-6 col-xs-12 col-sm-offset-3">Register</button>
         </form>
     </div> <!-- End registration panel-->   
     
+    <div class="container guest-results">
+        <ul id="escorts" class="row">
+        </ul>
+        <ul class="pagination">         
+        </ul>
+    </div>
+    
+    <div class="modal fade modal-sm" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">            
+                <div class="modal-body">
+                    <div class="container">
+                        <img id="modal_pic" src="" class="img-responsive" />
+                        <span class="info-head">Name:</span><p id="mod_name"></p> 
+                        <span class="info-head">Descpription:</span><p id="mod_desc"></p>
+                        <span class="info-head">Town:</span><p id="mod_town"></p>    
+                        <span class="info-head">Price/Hour:</span><p id="mod_price"></p>
+                    </div> 
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <footer class="footer">
       <div class="container">
         <p class="text-muted">&copy; 2015 - TEAM ELECTRIC LEVENDER</p>

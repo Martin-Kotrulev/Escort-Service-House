@@ -448,7 +448,8 @@ namespace EscortHouseService.Services.Controllers
                     var newPicture = new Picture()
                     {
                         EscortId = newUser.Id,
-                        B64 = model.B64
+                        B64 = model.B64,
+                        IsProfile = true
                     };
 
                     this.EscortServiceData.Pictures.Add(newPicture);

@@ -22,5 +22,8 @@ namespace EscortService.Models
 
         [ForeignKey("EscortId")]
         public virtual Escort Owner { get; set; }
+
+        [Required]
+        public bool IsProfile { get; set; }
     }
 }
