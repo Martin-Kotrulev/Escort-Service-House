@@ -5,11 +5,8 @@ var profPicDefaultPath = "Content/unknown.png";
 var cookieDeleteDate = "01 Jan 1970 00:00:00 UTC";
 var userInfoUrl = "http://localhost:50825/api/account/UserInfo";
 var guestEscortUrl = "http://localhost:50825/api/guest/escorts";
-<<<<<<< HEAD
 var guestEscortCountUrl = "http://localhost:50825/api/guest/escorts/count";
 var guestEscortDetailInfo = "http://localhost:50825/api/guest/escorts/";
-=======
->>>>>>> 03d29d93da54fd444d06069380e5cec2f4aa387c
 
 $(document).ready(function () {
     if (document.cookie) {
@@ -29,7 +26,6 @@ function showEscortProfile() {
     console.log("escort profile");
 }
 
-<<<<<<< HEAD
 function guestEscortInfo(element) {
    
     $.ajax({
@@ -111,28 +107,11 @@ function showGuestGallery() {
                 if (picture) {
                     $('#escorts').append('<li class="col-lg-3 col-md-4 col-sm-6 col-xs-6"><img src="'
                         + picture + '" name="' + usersArr[i]['UserName'] + '" class="image-responsive" onclick="guestEscortInfo(this)"></li>');
-=======
-function enterGuestMode() {
-    $('#reg').hide();
-    clearLogoAndProceedButton();
-
-    $.ajax({
-        url: guestEscortUrl,
-        type: "GET",
-        success: function (data, text, xhr) {
-            var usersArr = JSON.parse(xhr.responseText);
-            for (var i in usersArr) {
-                var picture = usersArr[i]['Pictures'][0];
-
-                if (picture) {
-                    $('#escorts').append('<li class="col-lg-3 col-md-4 col-sm-6 col-xs-6"><img src="' + picture['B64']  + '"class="image-responsive"></li>');
->>>>>>> 03d29d93da54fd444d06069380e5cec2f4aa387c
                 }
             }
         }
     });
 }
-<<<<<<< HEAD
 
 function enterGuestMode() {
     $('#reg').hide();
@@ -141,8 +120,6 @@ function enterGuestMode() {
     showGuestGallery();
 }
 
-=======
->>>>>>> 03d29d93da54fd444d06069380e5cec2f4aa387c
 function setLoggedView() {
     $('#login_error').text('');
     var cookies = document.cookie.split('; '),
