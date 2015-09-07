@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html>
+<head id="head">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Red Barrones</title>
+	<script src="Scripts/jquery-1.10.2.min.js"></script>
+	<script src="Scripts/bootstrap.min.js"></script>
+	<script src="Scripts/webapi.js"></script>
+	<link href="Content/bootstrap.min.css" rel="stylesheet">
+	
+	<style>
+        .profnav {
+            position:relative;
+        }
+        .guest>button {
+            height: 100px;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+        .jcont {
+             background-color: inherit;
+        }
+        .navbar {
+            background-color: blueviolet;
+        }
+        .jumbotron {
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+        .jumbotron>h1 {
+            text-align:center;
+            color:crimson;
+        }
+        .jumbotron>p {
+            text-align:center;
+        }
+        .footer>div {
+            margin-top: 25px;
+        }
+        .footer {
+            position: relative;
+            bottom: 5px;
+            top:auto;
+        }
+        .error {
+            color: red;
+        }
+        #regComplete {
+            color: green;
+            text-align:center;
+        }
+        #profPic {
+            border: 1px solid black;
+        }
+        #login_error {
+            color: red;
+        }
+        #escorts {
+            margin-top: 50px;
+            list-style-type: none;
+        }
+        #escorts li {
+            height: 250px;
+            margin-bottom: 25px;
+            overflow:hidden;
+            border: 2px solid blueviolet;
+            border-radius: 40%;
+        }
+        li>img {
+            position:absolute;
+            top:0;
+            left:0;
+            width: 100%;
+        }
+        li>img:hover {
+            opacity: 0.4;
+        }
+        #login_error {
+            margin-top: 35px;
+            text-align: center;
+        }
+        .pagination {
+            display: none;
+            margin: auto;
+        }
+        .modal {
+            display: none;
+        }
+        #desc {
+            display: block;
+        }
+        .info-head {
+            color: blueviolet;
+            font-size: 1.7em;
+        }
+        #myModal p {
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top"> <!-- Navigation bar-->
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">The Red Barroness</a>  
+        </div>
+          <div id="navbar" class="navbar-collapse collapse">
+              <form method="post" class="navbar-form navbar-right" onsubmit="login(); return false;">
+                  <div class="form-group">
+                      <input id="usr_name" type="text" placeholder="Username" class="form-control">
+                  </div>
+                  <div class="form-group">
+                      <input id="usr_pass" type="password" placeholder="Password" class="form-control">
+                  </div>
+                  <button type="submit" class="btn btn-success">Sign in</button>
+              </form>
+              <ul class="nav nav-pills navbar-right profnav" role="tablist">
+                  <li role="presentation"><a id="home_btn" href="#">Profile</a></li>
+                  <li role="presentation"><a class="escort-btn" href="#">Appointmens</a></li>
+                  <li role="presentation"><a href="#" onclick="logout()">Logout</a></li>
+              </ul> 
+          </div><!--/.navbar-collapse -->    
+      </div>
+    </nav> <!--End navigation bar-->
+
+    <div class="container jcont"> <!--Logo-->
+        <div class="jumbotron">
+            <h1>The Red Barroness</h1>
+            <p>Wellcome to the world of pleasure...</p>
+        </div>
+    </div>
+    <div class="container">
+        <h2 id="regComplete"></h2>
+    </div>
+    <div class="container">
+        <h2 id="login_error"></h2>
+    </div>
+    <div class="container guest">
+        <button type="button" class="btn btn-warning col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2" onclick="enterGuestMode()">Continue as Guest -></button>
+    </div> <!--End logo-->
+
+    <div class="container"> <!--Registration panel-->
+        <form method="post" id="reg" class="form-horizontal" role="form" onsubmit="register(); return false;">
+           <div class="form-group">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Username: </label>
+               <input id="Username" class="col-sm-3" type="text" name="Username" placeholder="Enter your username...">
+               <span class="error"></span>
+           </div>        
+           <div class="form-group">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Email: </label>
+               <input id="Email" class="col-sm-3" type="text" name="Email" placeholder="Enter your email...">
+               <span class="error"></span>
+           </div>           
+           <div class="form-group">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Phone Number: </label>
+               <input id="PhoneNumber" class="col-sm-3" type="text" name="PhoneNumber" placeholder="Enter your phone number...">
+               <span class="error"></span>
+           </div>              
+           <div class="form-group">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Password: </label>
+               <input id="Password" class="col-sm-3" type="password" name="Password" placeholder="Enter your password...">
+               <span class="error"></span>
+           </div>         
+           <div class="form-group">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Confirm Password: </label>
+               <input id="ConfirmPassword" class="col-sm-3" type="password" name="ConfirmPassword" placeholder="Confirm your password...">
+               <span class="error"></span>
+           </div>         
+           <div class="form-group">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Gender: </label>
+               <label class="radio-inline col-sm-2"><input type="radio" name="Gender" value="Male" checked>Male</label>
+               <label class="radio-inline col-sm-1"><input type="radio" name="Gender" value="Female">Female</label>
+           </div>  
+           <div class="form-group">
+               <label class="control-label col-sm-4 col-xs-3 col-sm-offset-1">Profile Type: </label>
+               <label class="radio-inline col-sm-2"><input type="radio" name="Role" value="Customer" onclick="changeForm()" checked>Only Pleasure</label>
+               <label class="radio-inline col-sm-3"><input type="radio" name="Role" value="Escort" onclick="changeForm()">Work and Pleasure</label>
+           </div>
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Town: </label>
+               <select form="reg" id="Town" class="col-sm-3" type="text" name="Town">
+                  <option value="Sofia" selected>Sofia</option>
+                  <option value="Plovdiv">Plovdiv</option>
+                  <option value="Varna">Varna</option>
+                  <option value="Burgas">Burgas</option>
+                  <option value="Ruse">Ruse</option>
+                  <option value="Stara Zagora">Stara Zagora</option>
+                  <option value="Pleven">Pleven</option>
+                  <option value="Sliven">Sliven</option>
+                  <option value="Dobrich">Dobrich</option>
+                  <option value="Shumen">Shumen</option>
+                  <option value="Pernik">Pernik</option>
+                  <option value="Haskovo">Haskovo</option>
+                  <option value="Yambol">Yambol</option>
+                  <option value="Pazardzhik">Pazardzhik</option>
+                  <option value="Blagoevgrad">Blaogevgrad</option>
+                  <option value="Veliko Tarnovo">Veliko Tarnovo</option>
+                  <option value="Vratza">Vratza</option>
+                  <option value="Gabrovo">Gabrovo</option>
+                  <option value="Asenovgrad">Asenovgrad</option>
+                   <option value="Vidin">Vidin</option>
+                </select>
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Height (in meters): </label>
+               <input id="Height" class="col-sm-3" type="text" name="Height" placeholder="Enter your height...">
+               <span class="error"></span>
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Weight (in kilos): </label>
+               <input id="Weight" class="col-sm-3" type="text" name="Weight" placeholder="Enter your weight...">
+               <span class="error"></span>
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Breasts Type: </label>
+               <select form="reg" id="BreastsType" class="col-sm-3" type="text" name="BreastsType">
+                  <option value="Natural" selected>Natural</option>
+                  <option value="Enchanced">Enchanced</option>
+                  <option value="NotKnown">Unknown</option>
+                </select>
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Breast Size (optional): </label>
+               <input id="BreastSize" class="col-sm-3" type="text" name="BreastSize" placeholder="Enter your breast size...">
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Hair Color (optional): </label>
+               <input id="HairColor" class="col-sm-3" type="text" name="HairColor" placeholder="Enter your hair color...">
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Description (optional): </label>
+               <textarea rows="4" id="Description" class="col-sm-3" type="text" name="Description" placeholder="Enter your description..."></textarea>
+           </div> 
+           <div class="form-group escort-extra">
+               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Profile Picture (optional): </label>
+               <input id="B64" class="col-sm-3" type="file" name="B64" onchange="managePicture(this)">
+               <img id="profPic" class="img-responsive col-sm-3 col-xs-3" src="Content/unknown.png">
+           </div> 
+           <button type="submit" class="btn btn-success col-sm-6 col-xs-12 col-sm-offset-3">Register</button>
+        </form>
+    </div> <!-- End registration panel-->   
+    
+    <div class="container guest-results">
+        <ul id="escorts" class="row">
+        </ul>
+        <ul class="pagination">         
+        </ul>
+    </div>
+    
+    <div class="modal fade modal-sm" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">            
+                <div class="modal-body">
+                    <div class="container">
+                        <img id="modal_pic" src="" class="img-responsive" />
+                        <span class="info-head">Name:</span><p id="mod_name"></p> 
+                        <span class="info-head">Descpription:</span><p id="mod_desc"></p>
+                        <span class="info-head">Town:</span><p id="mod_town"></p>    
+                        <span class="info-head">Price/Hour:</span><p id="mod_price"></p>
+                    </div> 
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy; 2015 - TEAM ELECTRIC LEVENDER</p>
+      </div>
+    </footer>
+</body>
+</html>
