@@ -137,5 +137,97 @@ namespace EscortHouseService.Services.Controllers
 
             return this.Ok();
         }
+
+        [HttpGet]
+        [Route("{town}")]
+        public IHttpActionResult SearchEscortByTown(string town)
+        {
+            var loggedCustomerId =  this.User.Identity.GetUserId();
+            var user = this.EscortServiceData.Customers
+                .FirstOrDefault(c => !c.IsDeleted && c.Id == loggedCustomerId);
+
+            if (user == null)
+            {
+                return this.Content(HttpStatusCode.NotFound,
+                    string.Format("There is no such active customer with Id: {0}", loggedCustomerId));
+            }
+
+            var escortsFromThisTown = this.EscortServiceData.Escorts
+                .Where(e => e.Town.Equals(town))
+                .Select(e => new
+                {
+                    e.UserName,
+                    e.Town
+                });
+
+            if (!escortsFromThisTown.Any())
+            {
+                return this.Content(HttpStatusCode.NotFound,
+                    string.Format("There is no escort from {0} or town name is invalid", town));
+            }
+            return this.Ok(escortsFromThisTown);
+        }
+
+        [HttpGet]
+        [Route("review/{escortName}")]
+        public IHttpActionResult GetEscortReviews(string escortName)
+        {
+            var escort = this.EscortServiceData.Escorts
+                .FirstOrDefault(e => !e.IsDeleted && e.UserName.Equals(escortName));
+
+            if (escort == null)
+            {
+                return this.NotFound();
+            }
+
+            var escortReview = this.EscortServiceData.Reviews
+                .Where(er => er.EscortId == escort.Id)
+                .OrderByDescending(er => er.Date)
+                .Select(er => new
+                {
+                    er.Escort.UserName,
+                    ReviewInfo = new
+                    {
+                        er.Date,
+                        er.Rating,
+                        er.Content
+                    }
+                });
+
+            if (!escortReview.Any())
+            {
+                return this.Content(HttpStatusCode.BadRequest,
+                    string.Format("{0} have no reviews", escort.UserName));
+            }
+            return this.Ok(escortReview);
+        }
+
+        
+        [Route("editprofile")]
+        [HttpPatch]
+        public IHttpActionResult EditProfil([FromBody]CustomerEditProfilBindingModel model)
+        {
+            var loggedCutomerID = this.User.Identity.GetUserId();
+            var customer = this.EscortServiceData.Customers
+                .Find(loggedCutomerID);
+
+            if (customer == null)
+            {
+                this.Unauthorized();
+            }
+
+            if (model.Email != null)
+            {
+                customer.Email = model.Email;
+            }
+            if ((model.Password != null && model.ConfirmPassword != null) && model.Password.Equals(model.ConfirmPassword))
+            {
+                customer.PasswordHash = model.Password;
+            }
+
+            this.EscortServiceData.SaveChanges();
+
+            return this.Ok();
+        }
     }
 }

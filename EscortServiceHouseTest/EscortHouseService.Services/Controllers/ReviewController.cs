@@ -19,9 +19,9 @@ namespace EscortHouseService.Services.Controllers
     {
 
         //[Authorize(Roles = "Customer")]
-        [Route("{escortName}/add")]
+        [Route("add")]
         [HttpPost]
-        public IHttpActionResult AddReview(string escortName, ReviewBindingModel reviewModel)
+        public IHttpActionResult AddReview(ReviewBindingModel reviewModel)
         {
             if (reviewModel == null)
             {
@@ -64,8 +64,8 @@ namespace EscortHouseService.Services.Controllers
                 var dateTiemDiff = (DateTime.Now - lastReview.Date).TotalHours;
                 if (dateTiemDiff < 2.0)
                 {
-                    return this.BadRequest(String.Format("You have given revie for escort: {0} just before {1} hours.",
-                        reviewModel.EscortName, dateTiemDiff));
+                    return this.BadRequest(String.Format("You have given revie for escort: {0} just before {1:F0} minutes.",
+                        reviewModel.EscortName, dateTiemDiff * 60 < 1 ? 1 : dateTiemDiff * 60));
                 }   
             }                
 
