@@ -15,7 +15,10 @@
             this.Price = appointment.Price;
             this.Location = appointment.Location;
             this.CustomerName = appointment.Customer.UserName;
+            this.Id = appointment.Id;
         }
+
+        public int Id { get; set; }
 
         public DateTime StartTime { get; set; }
 

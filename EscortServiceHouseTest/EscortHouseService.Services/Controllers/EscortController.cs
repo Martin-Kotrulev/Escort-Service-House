@@ -266,7 +266,7 @@
         //PATCH:  api/escort/appointments/{id}/cancel
         [HttpPatch]
         [Route("appointments/{id}/cancel")]
-        public IHttpActionResult CancelAppointment([FromBody]int id)
+        public IHttpActionResult CancelAppointment([FromUri]int id)
         {
             var currentUserId = this.User.Identity.GetUserId();
             var appointment = this.EscortServiceData.Appointments.Find(id);
@@ -308,11 +308,6 @@
             if (appointment.IsCanceled == true)
             {
                 return this.BadRequest("Appointment already canceled");
-            }
-
-            if (appointment.IsApproved != null)
-            {
-                return this.BadRequest("Appointment state already set");
             }
 
             if (appointment.EndTime < DateTime.Now)
@@ -551,6 +546,89 @@
             {
                 Message = string.Format("Escort: {0} deleted successfully", escort.UserName)
             });
+        }
+
+        // GET api/escort/pictures/nonprofile
+        [HttpGet]
+        [Route("pictures/nonprofile")]
+        public IHttpActionResult GetNonProfilePictures()
+        {
+            var currentUserId = this.User.Identity.GetUserId();
+
+            if (currentUserId == null)
+            {
+                return this.Unauthorized();
+            }
+
+            if (!this.User.IsInRole("Escort"))
+            {
+                return this.Unauthorized();
+            }
+
+            var pictures = this.EscortServiceData.Pictures
+                .Where(p => p.EscortId == currentUserId && p.IsProfile == false)
+                .Select(p => new PictureViewModel()
+                {
+                    Id = p.Id,
+                    B64 = p.B64
+                }).ToList();
+
+            return this.Ok(pictures);
+        }
+
+        // GET api/escort/pictures/profile
+        [HttpGet]
+        [Route("pictures/profile")]
+        public IHttpActionResult GetProfilePicture()
+        {
+            var currentUserId = User.Identity.GetUserId();
+
+            if (currentUserId == null)
+            {
+                return this.Unauthorized();
+            }
+
+            if (!this.User.IsInRole("Escort"))
+            {
+                return this.Unauthorized();
+            }
+
+            var profilePicture = this.EscortServiceData.Pictures
+                .FirstOrDefault(p => currentUserId == p.EscortId && p.IsProfile == true);
+
+            return this.Ok(new PictureViewModel()
+            {
+                Id = profilePicture.Id,
+                B64 = profilePicture.B64
+            });
+        }
+
+        // GET api/escort/pictures
+        [HttpGet]
+        [Route("pictures")]
+        public IHttpActionResult GetAllProfilePicteres()
+        {
+            var currentUserId = this.User.Identity.GetUserId();
+
+            if (currentUserId == null)
+            {
+                return this.Unauthorized();
+            }
+
+            if (!this.User.IsInRole("Escort"))
+            {
+                return this.Unauthorized();
+            }
+
+            var pictures = this.EscortServiceData.Pictures
+                .Where(p => currentUserId == p.EscortId)
+                .Select(p => new PictureViewModel()
+                {
+                    Id = p.Id,
+                    B64 = p.B64
+                }).ToList();
+
+            return this.Ok(pictures);
         }
     }
 }
