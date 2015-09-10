@@ -401,13 +401,15 @@ namespace EscortHouseService.Services.Controllers
             }
 
             //Auto login after registration (successful user registration should return access_token)
-            var loginResult = await this.LoginUser(new UserAccountInputModel()
-            {
-                Username = model.Username,
-                Password = model.Password
-            });
+            //var loginResult = await this.LoginUser(new UserAccountInputModel()
+            //{
+            //    Username = model.Username,
+            //    Password = model.Password
+            //});
 
-            return loginResult;
+            //return loginResult;
+
+            return this.Ok();
         }
 
         // POST api/Account/Register/Escort
@@ -484,13 +486,14 @@ namespace EscortHouseService.Services.Controllers
             }
 
             //Auto login after registration (successful user registration should return access_token)
-            var loginResult = await this.LoginUser(new UserAccountInputModel()
-            {
-                Username = model.Username,
-                Password = model.Password
-            });
+            //var loginResult = await this.LoginUser(new UserAccountInputModel()
+            //{
+            //    Username = model.Username,
+            //    Password = model.Password
+            //});
 
-            return loginResult;
+            //return loginResult;
+            return this.Ok();
         }
 
         // POST api/account/login

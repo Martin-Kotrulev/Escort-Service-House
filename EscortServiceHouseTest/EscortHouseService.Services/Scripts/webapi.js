@@ -1,20 +1,22 @@
-﻿var escortRegisterUrl = "http://localhost:50825/api/account/register/escort";
-var customerRegisterUrl = "http://localhost:50825/api/account/register/customer";
-var loginUrl = "http://localhost:50825/Token";
-var profPicDefaultPath = "Content/unknown.png";
+﻿var escortRegisterUrl = "http://redbarroness.azurewebsites.net/api/account/register/escort";
+var customerRegisterUrl = "http://redbarroness.azurewebsites.net/api/account/register/customer";
+var loginUrl = "http://redbarroness.azurewebsites.net/Token";
+var profPicDefaultPath = 'data:image/png;base64,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';
+
 var cookieDeleteDate = "01 Jan 1970 00:00:00 UTC";
-var userInfoUrl = "http://localhost:50825/api/account/UserInfo";
-var guestEscortUrl = "http://localhost:50825/api/guest/escorts";
-var guestEscortCountUrl = "http://localhost:50825/api/guest/escorts/count";
-var guestEscortDetailInfo = "http://localhost:50825/api/guest/escorts/";
-var escortProfilePictureUrl = "http://localhost:50825/api/escort/pictures/profile";
-var escortNonProfilePicturesUrl = "http://localhost:50825/api/escort/pictures/nonprofile";
-var escortAllPicturesUrl = "http://localhost:50825/api/escort/pictures";
-var escortPicturesAdd = "http://localhost:50825/api/escort/pictures/add";
-var escortChangeProfPic = "http://localhost:50825/api/escort/pictures/";
+var userInfoUrl = "http://redbarroness.azurewebsites.net/api/account/UserInfo";
+var guestEscortUrl = "http://redbarroness.azurewebsites.net/api/guest/escorts";
+var guestEscortCountUrl = "http://redbarroness.azurewebsites.net/api/guest/escorts/count";
+var guestEscortDetailInfo = "http://redbarroness.azurewebsites.net/api/guest/escorts/";
+var escortProfilePictureUrl = "http://redbarroness.azurewebsites.net/api/escort/pictures/profile";
+var escortNonProfilePicturesUrl = "http://redbarroness.azurewebsites.net/api/escort/pictures/nonprofile";
+var escortAllPicturesUrl = "http://redbarroness.azurewebsites.net/api/escort/pictures";
+var escortPicturesAdd = "http://redbarroness.azurewebsites.net/api/escort/pictures/add";
+var escortChangeProfPic = "http://redbarroness.azurewebsites.net/api/escort/pictures/";
 
 $(document).ready(function () {
-    if (document.cookie) {
+    $('img').attr('src', profPicDefaultPath);
+    if (document.cookie.indexOf("username") >= 0) {
         setLoggedView();
     } else {
         setForRegister();
@@ -144,7 +146,7 @@ function enterGuestMode() {
 
 function setTheEscortView() {
     var cookies = document.cookie.split('; '),
-        token = cookies[1].split('=')[1];
+        token = cookies[2].split('=')[1];
 
     $.ajax({
         url: escortProfilePictureUrl,
@@ -197,7 +199,7 @@ function setProfilePic(element) {
         var elementId = $(element).siblings()[0].id;
         var picId = $('#' + elementId + " img").attr("id");
         var cookies = document.cookie.split('; '),
-            token = cookies[1].split('=')[1];
+            token = cookies[2].split('=')[1];
         console.log(picId);
         $.ajax({
             url: escortChangeProfPic + picId + '/change',
@@ -221,7 +223,7 @@ function delPic(element) {
         var elementId = $(element).siblings()[0].id;
         var picId = $('#' + elementId + " img")[1].id;
         var cookies = document.cookie.split('; '),
-            token = cookies[1].split('=')[1];
+            token = cookies[2].split('=')[1];
         console.log(picId);
         
         console.log(picId);
@@ -253,7 +255,7 @@ function addPic(element) {
             pictureElement = $("#" + pictureDiv.id + " img"),
             picture = { "B64": pictureElement[1].src },
             cookies = document.cookie.split('; '),
-            token = cookies[1].split('=')[1];
+            token = cookies[2].split('=')[1];
         $.ajax({
             url: escortPicturesAdd,
             type: "POST",
@@ -278,7 +280,7 @@ function changeProfilePic() {
 
     $('#profile_pic_modal').modal();
     var cookies = document.cookie.split('; '),
-            token = cookies[1].split('=')[1];
+            token = cookies[2].split('=')[1];
     
     $.ajax({
         url: escortNonProfilePicturesUrl,
@@ -312,9 +314,9 @@ function changeProfilePic() {
 function setLoggedView() {
     $('#login_error').text('');
     var cookies = document.cookie.split('; '),
-        token = cookies[1].split('=')[1],
-        type = cookies[2].split('=')[1],
-        user = cookies[0].split('=')[1];
+        token = cookies[2].split('=')[1],
+        type = cookies[3].split('=')[1],
+        user = cookies[1].split('=')[1];
 
     $.ajax({
         url: userInfoUrl,
@@ -399,7 +401,8 @@ function emptySearch() {
 
 function logout() {
     clearCookie();
-    setForRegister();
+    location.reload();
+    //setForRegister();
 }
 
 function managePicture() {
