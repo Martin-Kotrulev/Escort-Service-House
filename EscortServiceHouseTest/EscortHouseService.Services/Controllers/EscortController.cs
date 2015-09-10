@@ -581,7 +581,7 @@
         [Route("pictures/profile")]
         public IHttpActionResult GetProfilePicture()
         {
-            var currentUserId = User.Identity.GetUserId();
+            var currentUserId = this.User.Identity.GetUserId();
 
             if (currentUserId == null)
             {

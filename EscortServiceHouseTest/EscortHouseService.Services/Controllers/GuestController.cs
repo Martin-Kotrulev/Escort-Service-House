@@ -17,7 +17,7 @@ namespace EscortHouseService.Services.Controllers
         [EnableQuery]
         public IHttpActionResult GetAllEscorts()
         {
-            var escorts = this.EscortServiceData.Escorts.Where(e => !e.IsDeleted);          
+            var escorts = this.EscortServiceData.Escorts.Where(e => !e.IsDeleted).ToList();          
             List<GuestEscortViewModel> viewModelEscort = new List<GuestEscortViewModel>();
 
             foreach (var escort in escorts)

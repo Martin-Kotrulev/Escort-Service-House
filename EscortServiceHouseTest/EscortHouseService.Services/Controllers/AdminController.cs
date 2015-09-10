@@ -21,7 +21,7 @@ namespace EscortHouseService.Services.Controllers
         [Authorize(Roles = "Admin")]
         public IHttpActionResult GetAllEscorts()
         {
-            var escorts = this.EscortServiceData.Escorts;
+            var escorts = this.EscortServiceData.Escorts.ToList();
             List<GuestEscortDetailViewModel> viewModelEscort = new List<GuestEscortDetailViewModel>();
 
             foreach (var escort in escorts)
@@ -37,7 +37,7 @@ namespace EscortHouseService.Services.Controllers
         [Authorize(Roles = "Admin")]
         public IHttpActionResult GetAllUsers()
         {
-            var users = this.EscortServiceData.Users;
+            var users = this.EscortServiceData.Users.ToList();
             List<UserViewModel> viewModelUser = new List<UserViewModel>();
 
             foreach (var user in users)

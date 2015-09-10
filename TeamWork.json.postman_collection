@@ -1,89 +1,95 @@
 {
-	"id": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
+	"id": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
 	"name": "TeamWork",
 	"description": "",
 	"order": [
-		"4b0061e7-4fe4-c6e7-b73c-5a8015690204"
+		"ff70a2ac-342e-2c85-8d81-1fad11440bef"
 	],
 	"folders": [
 		{
-			"id": "c23fc09e-2d54-a716-dbec-355f2553ca59",
+			"id": "b6ce222d-2fa1-8695-9f20-44c6dcdbdb05",
 			"name": "CustomerController",
 			"description": "",
 			"write": true,
 			"order": [
-				"fb9cc595-e93e-62ff-83bd-6472793a0e8e",
-				"0a574756-2dcc-8948-b989-54a2dca7910a"
+				"1a2f3695-393a-81f0-84de-ef237797eeac",
+				"3f77d36b-2b6f-3ddc-c87b-d7deac8b611d",
+				"cdb2117a-1703-ba19-d312-d0ee14553401",
+				"0e8b708b-61ba-f8e2-d7fe-879c28743f27",
+				"38058521-4997-0d82-6e1b-b5512d182232",
+				"1bf24f74-e388-0a4b-2cd3-f77f1ee66eeb"
 			],
 			"collection": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
 			"owner": 0,
 			"collection_name": "TeamWork",
 			"collection_owner": 0,
-			"collection_id": "5395aaa3-fb08-3c61-bcbe-1e40b36def28"
+			"collection_id": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94"
 		},
 		{
-			"id": "52823787-dcb5-630c-13e0-e580a2779845",
+			"id": "b6e843f1-49e0-10f1-41e1-d9573f81cb39",
 			"name": "EscortController",
 			"description": "",
 			"write": true,
 			"order": [
-				"e48cbdf3-4f4a-820e-cbd4-b0df31e53f0f",
-				"319ff60d-553c-4b79-9b71-c5511991d897",
-				"9f0a3f7f-2e53-ab22-e15a-9fc0627f3885",
-				"593d404d-c7a3-6bba-5cd8-127378f5fc59",
-				"f9d1b287-e4bc-e1e5-ed53-e9cf523cfe1b",
-				"82436b7c-3b1e-b876-96f7-9ae13c36cdd0",
-				"cd544f8c-aea5-3ec8-d9fc-a38d108e1e03"
+				"48cd5a6c-766f-5692-3f51-729fcbbd58be",
+				"d7eef6fb-fd41-dbe0-ffec-bbe5a0cea035",
+				"f1cfa1a2-0222-6314-0b2e-7d065fa7e627",
+				"7f72f244-d447-e328-c596-28f2fa58ad13",
+				"4db1e078-58ef-ce73-3fe1-317aafff672e",
+				"6b7673b7-e032-2151-b47c-7e72b2a376d3",
+				"08a49037-0402-6c89-19f8-166c318ddec1",
+				"4d0c781a-cc5e-a56e-617d-3f39db502dc4",
+				"af242233-d419-0226-8aae-2b5ba9418bdb"
 			],
 			"collection": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
 			"owner": 0,
 			"collection_name": "TeamWork",
 			"collection_owner": 0,
-			"collection_id": "5395aaa3-fb08-3c61-bcbe-1e40b36def28"
+			"collection_id": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94"
 		},
 		{
-			"id": "7858efb4-5873-b55c-2ddd-54db64b8ae68",
+			"id": "f9f6e39c-b9cc-dc46-fd31-6da70d6addb7",
 			"name": "GeustControler",
 			"description": "",
 			"write": true,
 			"order": [
-				"ac4bc20f-abd8-1c33-3f31-94d0e2c2a44c",
-				"365e1465-705b-2eb6-f51d-4d4f1561caf3"
+				"a912d10d-9019-fa41-7592-b595e45e0658",
+				"81036d5d-8f74-79ee-9fbb-e5e59257eaa1"
 			],
 			"collection": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
 			"owner": 0,
 			"collection_name": "TeamWork",
 			"collection_owner": 0,
-			"collection_id": "5395aaa3-fb08-3c61-bcbe-1e40b36def28"
+			"collection_id": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94"
 		},
 		{
-			"id": "7c654161-bfe7-b13e-516f-8875b6adf1e0",
+			"id": "5252083b-c200-5e43-0829-d18d9ad4b8be",
 			"name": "Register",
 			"description": "",
 			"write": true,
 			"order": [
-				"cdc8450d-7233-16e9-ad89-0d2b9a3897af",
-				"61ea4a22-418c-868d-709e-bce8baab2b72"
+				"8a8fe0ba-920a-ba1f-9b7f-bdc6d9dbb24f",
+				"d5092f7b-4376-4dc4-14c7-6ce7faf90af3"
 			],
 			"collection": "c734f50f-9d3f-0e7d-92f9-40fa6fdb03fa",
 			"owner": 0,
 			"collection_name": "TeamWork",
 			"collection_owner": 0,
-			"collection_id": "5395aaa3-fb08-3c61-bcbe-1e40b36def28"
+			"collection_id": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94"
 		},
 		{
-			"id": "ab9a09f6-baea-4f49-3aca-949c9334a13a",
+			"id": "803cb49b-1fe1-6a5e-7129-f2e101cfa3c4",
 			"name": "ReviewController",
 			"description": "",
 			"write": true,
 			"order": [
-				"de67cb8b-b4e9-aa1d-383b-7a27363a4a87"
+				"73e181bc-46a9-b64f-0362-7244b2260fc3"
 			],
 			"collection": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
 			"owner": 0,
 			"collection_name": "TeamWork",
 			"collection_owner": 0,
-			"collection_id": "5395aaa3-fb08-3c61-bcbe-1e40b36def28"
+			"collection_id": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94"
 		}
 	],
 	"timestamp": 1440685931447,
@@ -92,22 +98,136 @@
 	"public": false,
 	"requests": [
 		{
-			"id": "0a574756-2dcc-8948-b989-54a2dca7910a",
-			"headers": "Authorization: Bearer u4D2KuTdFmLDwUnt3_e1o29J0pNmClGyIdAOqi-m8I8XkPgGWYE6jJWtajesyay8nYVFLw7NHMgp3z7Qwe0F6FlLdWo44lcXtHFdeAKhCAlSPov4As0LyaPS4tbPZNatb36qAX9fnTLPWdxyq62NJ5XD074FPFdtkCivjXTlNofHrCyr06VxzliI3r31UOpMQlD7eShkdwZUp3LG8JyCm2n8iwZlwGGBvenWEgdlt3XMlfI2eVvMRiE9UBKMYsEceIZ1jUxHOx3tRBtibpyaZkiR77FKq42FrlZSK4uNrSWekNpTySwGZmr2himPlt69f2T317dACkrc_1ADwGMFzRxoC-W4QCXakI7Qup7oTauoNP8FQYR962qjND0xXLqh9hybD3Y9ZQ6Sj-kXUGZwX__xFARowlkjK4G6J6kZFajHZfhH-PBJlyX1dn6m1Aiy9w0FrBZFbD7V5IR1BQIAm2YiIlI4zJbvVyoD4nNa7AG7kGP3WyMn-jo081IHtIZ2IaWRDys-9tYTL5_nREUNIw\n",
-			"url": "http://localhost:50825/api/customer/appointment/submit",
+			"id": "08a49037-0402-6c89-19f8-166c318ddec1",
+			"headers": "Authorization: Bearer oRVEAHfj_7QSdQveNPVPu2ozJyvTjFI2J6m6oFrRVlDXglb5EjdJZtaeNsMlDrNzSXVSI_mupn0SnuQrYyHp8TER69x9OlzIk6V-l2q4srpQLrfoyWwsCXY2ndkl1fbvU-xC2zdXNFq1J4IiWpQtU6YtXbrwLJNNazrFXmkRTMo9jxbAM_rlkRV6nmCDWFsCfqnu5mtl5TH-AijKoGyvYJqD4jR6NBBfcNx-sClvch2CKqgxLGW5-44adkTxH4jBxbjgVwVufAa-JqCH3KhspFbHVDbQB8VXX65dHkkAUnmcQITpfIn1rtIUWLhEm8-DfOXA8aIE8xYI9s_RSsgXjnKKaW1FhBVcyGVBzeEDHEQtVKZdctVCXePoN0C7rAlqZV0ra_hyIWU7nXzSybus84sLQ3DpdUcj95PrlGpVNZ-C8F3CTM8bUF25X5Vc1RzYwQsIHCAavbk4cjbDatRktUzdDJA1P8iKKcrIhaFaFTBEijzOGB9wqUdR79flhy1Y\n",
+			"url": "http://redbarroness.azurewebsites.net/api/escort/delete",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886457768,
+			"name": "DeleteLogedEscort",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "0e8b708b-61ba-f8e2-d7fe-879c28743f27",
+			"headers": "Authorization: Bearer cOdIbJmAooIywWbjof_60bofglw4SV8mWf8tJ4BQAojJu8nBpA7YcN0pmGeVUjzED-TlphdlRPbc33wWBA9z-dIKTCO14qm92HYiZ4UuBcNNEQ_zn7VBEXNoMkIyFVITLh_1O4pyMfflS1aQRysCS0rBl7RPREjLtdkAbGtO_EC_HL7PeMTUIlEruX0McpJow1PtdFQmRMI-AJ1-KCDuUSlR8QlmH2jGKjW35DOHYTwxwz1nA92JboFg9AkjX4tA2q6Db7Mxu3UBXNeWScI84KLZkpsxuOPI_TXzqsvN5qzLM9WJDT3pyA7imo3cS2pYsYciCKLZEFeu2e5h6HKjq6hhtQq1ws07gHE-DyGJwWYTnoG4jePGusFb5c7RGQvxEtRyNQYwJEHBhYD4kWtYuehYN7_YzrwS4Hb7heQNHn7fCqj-h2RtdLPqi2oHi9Y1CRg2faz3cSRAWlqMaVMv83ev7O6FfH0TY8ocM2T0pUIwBFKQWiPilx4nbcFqVEt7DtDHV-S8uQbsnDmUbI2o3Q\n",
+			"url": "http://redbarroness.azurewebsites.net/api/customer/varna",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886257673,
+			"name": "SearchEscortByTown",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "1a2f3695-393a-81f0-84de-ef237797eeac",
+			"headers": "Authorization: Bearer cOdIbJmAooIywWbjof_60bofglw4SV8mWf8tJ4BQAojJu8nBpA7YcN0pmGeVUjzED-TlphdlRPbc33wWBA9z-dIKTCO14qm92HYiZ4UuBcNNEQ_zn7VBEXNoMkIyFVITLh_1O4pyMfflS1aQRysCS0rBl7RPREjLtdkAbGtO_EC_HL7PeMTUIlEruX0McpJow1PtdFQmRMI-AJ1-KCDuUSlR8QlmH2jGKjW35DOHYTwxwz1nA92JboFg9AkjX4tA2q6Db7Mxu3UBXNeWScI84KLZkpsxuOPI_TXzqsvN5qzLM9WJDT3pyA7imo3cS2pYsYciCKLZEFeu2e5h6HKjq6hhtQq1ws07gHE-DyGJwWYTnoG4jePGusFb5c7RGQvxEtRyNQYwJEHBhYD4kWtYuehYN7_YzrwS4Hb7heQNHn7fCqj-h2RtdLPqi2oHi9Y1CRg2faz3cSRAWlqMaVMv83ev7O6FfH0TY8ocM2T0pUIwBFKQWiPilx4nbcFqVEt7DtDHV-S8uQbsnDmUbI2o3Q\n",
+			"url": "http://redbarroness.azurewebsites.net/api/customer/get",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886201292,
+			"name": "GetLogedCustomerProfile",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "1bf24f74-e388-0a4b-2cd3-f77f1ee66eeb",
+			"headers": "Authorization: Bearer cOdIbJmAooIywWbjof_60bofglw4SV8mWf8tJ4BQAojJu8nBpA7YcN0pmGeVUjzED-TlphdlRPbc33wWBA9z-dIKTCO14qm92HYiZ4UuBcNNEQ_zn7VBEXNoMkIyFVITLh_1O4pyMfflS1aQRysCS0rBl7RPREjLtdkAbGtO_EC_HL7PeMTUIlEruX0McpJow1PtdFQmRMI-AJ1-KCDuUSlR8QlmH2jGKjW35DOHYTwxwz1nA92JboFg9AkjX4tA2q6Db7Mxu3UBXNeWScI84KLZkpsxuOPI_TXzqsvN5qzLM9WJDT3pyA7imo3cS2pYsYciCKLZEFeu2e5h6HKjq6hhtQq1ws07gHE-DyGJwWYTnoG4jePGusFb5c7RGQvxEtRyNQYwJEHBhYD4kWtYuehYN7_YzrwS4Hb7heQNHn7fCqj-h2RtdLPqi2oHi9Y1CRg2faz3cSRAWlqMaVMv83ev7O6FfH0TY8ocM2T0pUIwBFKQWiPilx4nbcFqVEt7DtDHV-S8uQbsnDmUbI2o3Q\n",
+			"url": "http://redbarroness.azurewebsites.net/api/customer/edit",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PATCH",
+			"data": [
+				{
+					"key": "email",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "rado_niko",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "confirmpassword",
+					"value": "rado_niko",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886287504,
+			"name": "EditLogedCustomerProfile",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "38058521-4997-0d82-6e1b-b5512d182232",
+			"headers": "Authorization: Bearer cOdIbJmAooIywWbjof_60bofglw4SV8mWf8tJ4BQAojJu8nBpA7YcN0pmGeVUjzED-TlphdlRPbc33wWBA9z-dIKTCO14qm92HYiZ4UuBcNNEQ_zn7VBEXNoMkIyFVITLh_1O4pyMfflS1aQRysCS0rBl7RPREjLtdkAbGtO_EC_HL7PeMTUIlEruX0McpJow1PtdFQmRMI-AJ1-KCDuUSlR8QlmH2jGKjW35DOHYTwxwz1nA92JboFg9AkjX4tA2q6Db7Mxu3UBXNeWScI84KLZkpsxuOPI_TXzqsvN5qzLM9WJDT3pyA7imo3cS2pYsYciCKLZEFeu2e5h6HKjq6hhtQq1ws07gHE-DyGJwWYTnoG4jePGusFb5c7RGQvxEtRyNQYwJEHBhYD4kWtYuehYN7_YzrwS4Hb7heQNHn7fCqj-h2RtdLPqi2oHi9Y1CRg2faz3cSRAWlqMaVMv83ev7O6FfH0TY8ocM2T0pUIwBFKQWiPilx4nbcFqVEt7DtDHV-S8uQbsnDmUbI2o3Q\n",
+			"url": "http://redbarroness.azurewebsites.net/api/customer/review/escort1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886264743,
+			"name": "GetEscortReviewsByUserName",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "3f77d36b-2b6f-3ddc-c87b-d7deac8b611d",
+			"headers": "Authorization: Bearer cOdIbJmAooIywWbjof_60bofglw4SV8mWf8tJ4BQAojJu8nBpA7YcN0pmGeVUjzED-TlphdlRPbc33wWBA9z-dIKTCO14qm92HYiZ4UuBcNNEQ_zn7VBEXNoMkIyFVITLh_1O4pyMfflS1aQRysCS0rBl7RPREjLtdkAbGtO_EC_HL7PeMTUIlEruX0McpJow1PtdFQmRMI-AJ1-KCDuUSlR8QlmH2jGKjW35DOHYTwxwz1nA92JboFg9AkjX4tA2q6Db7Mxu3UBXNeWScI84KLZkpsxuOPI_TXzqsvN5qzLM9WJDT3pyA7imo3cS2pYsYciCKLZEFeu2e5h6HKjq6hhtQq1ws07gHE-DyGJwWYTnoG4jePGusFb5c7RGQvxEtRyNQYwJEHBhYD4kWtYuehYN7_YzrwS4Hb7heQNHn7fCqj-h2RtdLPqi2oHi9Y1CRg2faz3cSRAWlqMaVMv83ev7O6FfH0TY8ocM2T0pUIwBFKQWiPilx4nbcFqVEt7DtDHV-S8uQbsnDmUbI2o3Q\n",
+			"url": "http://redbarroness.azurewebsites.net/api/customer/appointment/submit",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "POST",
 			"data": [
 				{
 					"key": "starttime",
-					"value": "2015/5/17",
+					"value": "2015/9/20",
 					"type": "text",
 					"enabled": true
 				},
 				{
 					"key": "endtime",
-					"value": "2015/5/18",
+					"value": "2015/9/22",
 					"type": "text",
 					"enabled": true
 				},
@@ -135,73 +255,53 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1441628843943,
+			"time": 1441886821787,
 			"name": "AppointmentSubmit",
 			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
 			"responses": []
 		},
 		{
-			"id": "319ff60d-553c-4b79-9b71-c5511991d897",
-			"headers": "Authorization: Bearer QFEhBSImlQmcZld9PJf6XQxO4dtGFQUzvd4MGDrKsj5DD0oh7UJNWfjN_Gsw-v8oXlIsXopmhGksAzZijC62wS3wsbjrQ2v9xRy7LOLvw-0O8NDTBlDD6NUcU6iILlXOnPzxu-p-1ViTQ8L4F135kycuJx37eR7JHvWGxq0wklWTcLuLVMQmN1J1SUXTXXCuxw4_eGJAY36S1x1FWYEUaCOiwEtUZ4R2zCvt6aZ7DtzWU_7G2nB_rBrloKN9VJSyFSP8GC_OwhZtozcYG8SAoevXRIOf4EkglZf6CC38RcrUHdAKbScZFHLBZLrNZnwJQQamVpJsXJ1Y15NtX0nsscA56G37phvInxYD73Wgd6GOj0vHaF3wmTfwmjtRLvZMP98e_Q_5vY82WCAXCUIqKG3U8IUW0AobyAIYFqL4T0g63DrPBIc-q2TtgYxmji1YDoTh3Eoz5NPSDSZZlGykJ003elt2oIaBwvaQ0GVKrqvjJULhoWrkyndk2VQA_8xr\n",
-			"url": "http://localhost:50825/api/escort/pricelist",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1441610628051,
-			"name": "GetPriceList",
-			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
-			"responses": []
-		},
-		{
-			"id": "365e1465-705b-2eb6-f51d-4d4f1561caf3",
-			"headers": "",
-			"url": "http://localhost:50825/api/guest/escorts/escort2",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "GET",
-			"data": [],
-			"dataMode": "params",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1441608824424,
-			"name": "GuestGetsEscortByUserName",
-			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
-			"responses": []
-		},
-		{
-			"id": "4b0061e7-4fe4-c6e7-b73c-5a8015690204",
-			"headers": "",
-			"url": "http://localhost:50825/token ",
+			"id": "48cd5a6c-766f-5692-3f51-729fcbbd58be",
+			"headers": "Authorization: Bearer oRVEAHfj_7QSdQveNPVPu2ozJyvTjFI2J6m6oFrRVlDXglb5EjdJZtaeNsMlDrNzSXVSI_mupn0SnuQrYyHp8TER69x9OlzIk6V-l2q4srpQLrfoyWwsCXY2ndkl1fbvU-xC2zdXNFq1J4IiWpQtU6YtXbrwLJNNazrFXmkRTMo9jxbAM_rlkRV6nmCDWFsCfqnu5mtl5TH-AijKoGyvYJqD4jR6NBBfcNx-sClvch2CKqgxLGW5-44adkTxH4jBxbjgVwVufAa-JqCH3KhspFbHVDbQB8VXX65dHkkAUnmcQITpfIn1rtIUWLhEm8-DfOXA8aIE8xYI9s_RSsgXjnKKaW1FhBVcyGVBzeEDHEQtVKZdctVCXePoN0C7rAlqZV0ra_hyIWU7nXzSybus84sLQ3DpdUcj95PrlGpVNZ-C8F3CTM8bUF25X5Vc1RzYwQsIHCAavbk4cjbDatRktUzdDJA1P8iKKcrIhaFaFTBEijzOGB9wqUdR79flhy1Y\n",
+			"url": "http://redbarroness.azurewebsites.net/api/escort/appointments",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "POST",
 			"data": [
 				{
-					"key": "username",
-					"value": "escort2",
+					"key": "pagesize",
+					"value": "",
 					"type": "text",
 					"enabled": true
 				},
 				{
-					"key": "password",
-					"value": "escort2",
+					"key": "page",
+					"value": "",
 					"type": "text",
 					"enabled": true
 				},
 				{
-					"key": "grant_type",
-					"value": "password",
+					"key": "searchByDate",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "searchByCustomer",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "filter",
+					"value": "",
 					"type": "text",
 					"enabled": true
 				}
@@ -211,16 +311,149 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1440959302775,
-			"name": "LogIn",
+			"time": 1441886325392,
+			"name": "GetAppointments",
 			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
 			"responses": []
 		},
 		{
-			"id": "593d404d-c7a3-6bba-5cd8-127378f5fc59",
-			"headers": "Authorization: Bearer QFEhBSImlQmcZld9PJf6XQxO4dtGFQUzvd4MGDrKsj5DD0oh7UJNWfjN_Gsw-v8oXlIsXopmhGksAzZijC62wS3wsbjrQ2v9xRy7LOLvw-0O8NDTBlDD6NUcU6iILlXOnPzxu-p-1ViTQ8L4F135kycuJx37eR7JHvWGxq0wklWTcLuLVMQmN1J1SUXTXXCuxw4_eGJAY36S1x1FWYEUaCOiwEtUZ4R2zCvt6aZ7DtzWU_7G2nB_rBrloKN9VJSyFSP8GC_OwhZtozcYG8SAoevXRIOf4EkglZf6CC38RcrUHdAKbScZFHLBZLrNZnwJQQamVpJsXJ1Y15NtX0nsscA56G37phvInxYD73Wgd6GOj0vHaF3wmTfwmjtRLvZMP98e_Q_5vY82WCAXCUIqKG3U8IUW0AobyAIYFqL4T0g63DrPBIc-q2TtgYxmji1YDoTh3Eoz5NPSDSZZlGykJ003elt2oIaBwvaQ0GVKrqvjJULhoWrkyndk2VQA_8xr\n",
-			"url": "http://localhost:50825/api/escort/pictures/add",
+			"id": "4d0c781a-cc5e-a56e-617d-3f39db502dc4",
+			"headers": "Authorization: Bearer oRVEAHfj_7QSdQveNPVPu2ozJyvTjFI2J6m6oFrRVlDXglb5EjdJZtaeNsMlDrNzSXVSI_mupn0SnuQrYyHp8TER69x9OlzIk6V-l2q4srpQLrfoyWwsCXY2ndkl1fbvU-xC2zdXNFq1J4IiWpQtU6YtXbrwLJNNazrFXmkRTMo9jxbAM_rlkRV6nmCDWFsCfqnu5mtl5TH-AijKoGyvYJqD4jR6NBBfcNx-sClvch2CKqgxLGW5-44adkTxH4jBxbjgVwVufAa-JqCH3KhspFbHVDbQB8VXX65dHkkAUnmcQITpfIn1rtIUWLhEm8-DfOXA8aIE8xYI9s_RSsgXjnKKaW1FhBVcyGVBzeEDHEQtVKZdctVCXePoN0C7rAlqZV0ra_hyIWU7nXzSybus84sLQ3DpdUcj95PrlGpVNZ-C8F3CTM8bUF25X5Vc1RzYwQsIHCAavbk4cjbDatRktUzdDJA1P8iKKcrIhaFaFTBEijzOGB9wqUdR79flhy1Y\n",
+			"url": "http://redbarroness.azurewebsites.net/api/escort/appointments/2/confirm",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PATCH",
+			"data": [
+				{
+					"key": "pagesize",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "page",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "searchByDate",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "searchByCustomer",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "location",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "filter",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886491483,
+			"name": "ConfirmAppointment",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "4db1e078-58ef-ce73-3fe1-317aafff672e",
+			"headers": "Authorization: Bearer oRVEAHfj_7QSdQveNPVPu2ozJyvTjFI2J6m6oFrRVlDXglb5EjdJZtaeNsMlDrNzSXVSI_mupn0SnuQrYyHp8TER69x9OlzIk6V-l2q4srpQLrfoyWwsCXY2ndkl1fbvU-xC2zdXNFq1J4IiWpQtU6YtXbrwLJNNazrFXmkRTMo9jxbAM_rlkRV6nmCDWFsCfqnu5mtl5TH-AijKoGyvYJqD4jR6NBBfcNx-sClvch2CKqgxLGW5-44adkTxH4jBxbjgVwVufAa-JqCH3KhspFbHVDbQB8VXX65dHkkAUnmcQITpfIn1rtIUWLhEm8-DfOXA8aIE8xYI9s_RSsgXjnKKaW1FhBVcyGVBzeEDHEQtVKZdctVCXePoN0C7rAlqZV0ra_hyIWU7nXzSybus84sLQ3DpdUcj95PrlGpVNZ-C8F3CTM8bUF25X5Vc1RzYwQsIHCAavbk4cjbDatRktUzdDJA1P8iKKcrIhaFaFTBEijzOGB9wqUdR79flhy1Y\n",
+			"url": "http://redbarroness.azurewebsites.net/api/escort/pictures/2/delete",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886432790,
+			"name": "DeletePictureById",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "6b7673b7-e032-2151-b47c-7e72b2a376d3",
+			"headers": "Authorization: Bearer oRVEAHfj_7QSdQveNPVPu2ozJyvTjFI2J6m6oFrRVlDXglb5EjdJZtaeNsMlDrNzSXVSI_mupn0SnuQrYyHp8TER69x9OlzIk6V-l2q4srpQLrfoyWwsCXY2ndkl1fbvU-xC2zdXNFq1J4IiWpQtU6YtXbrwLJNNazrFXmkRTMo9jxbAM_rlkRV6nmCDWFsCfqnu5mtl5TH-AijKoGyvYJqD4jR6NBBfcNx-sClvch2CKqgxLGW5-44adkTxH4jBxbjgVwVufAa-JqCH3KhspFbHVDbQB8VXX65dHkkAUnmcQITpfIn1rtIUWLhEm8-DfOXA8aIE8xYI9s_RSsgXjnKKaW1FhBVcyGVBzeEDHEQtVKZdctVCXePoN0C7rAlqZV0ra_hyIWU7nXzSybus84sLQ3DpdUcj95PrlGpVNZ-C8F3CTM8bUF25X5Vc1RzYwQsIHCAavbk4cjbDatRktUzdDJA1P8iKKcrIhaFaFTBEijzOGB9wqUdR79flhy1Y\n",
+			"url": "http://redbarroness.azurewebsites.net/api/escort/pictures/5/change",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886444404,
+			"name": "ChangeProfilePicture",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "73e181bc-46a9-b64f-0362-7244b2260fc3",
+			"headers": "Authorization: Bearer yxOEfMoWiMPMPPok-0WsCHpIXTK2oUXPfm8IHUPuRYExsjIXwPRrfA0HcVYn2p1GMlNmA0V3JPAaOxFkEMjvqt-oKtOx-DmjmCMsQ7n-nOxLgGtrguuzQ_ZNgeCdKp0jWQpyUDS_9yHuvWkh0yUUZZux2K4KWnNbKVRB0QQV2vKmy_peQZo9pnc45wybJ5hNN_qJCq4cRDigt-hDWDXBJFZNrtc_zlfuNS_Afgij29-kwe_uU7Kf_k0nSNXlymdWqm2a4veyPKVI1N7UB_9H9uhFhyu-h4xILxZdfnTt_LCw1yhTieTfOWJ--oIgu6K6i9G-WrDvNbaxPvT3a4RGi49fIMkdSWH_0smNaSfsd2_q813LDFr--tVpEm038jMLMAlnJOqnqeJ91SjTl29Pi18CWEkivRkK7FUksMQYJD8vuinvmbC8S711SonFFib49-kDC_7XjGzX7QW8QGSzkxgy5tgK3RjVGEo19oge6rCrRkcqeOzziCGIXOh3dGA2bW_2axE2b_kcUMlVs_iQ1A\n",
+			"url": "http://localhost:50825/api/escort-review/escort2/add",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "content",
+					"value": "super",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "rating",
+					"value": "5",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "escortname",
+					"value": "escort1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441610098668,
+			"name": "ReviewSubmit",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": [],
+			"folder": "803cb49b-1fe1-6a5e-7129-f2e101cfa3c4"
+		},
+		{
+			"id": "7f72f244-d447-e328-c596-28f2fa58ad13",
+			"headers": "Authorization: Bearer oRVEAHfj_7QSdQveNPVPu2ozJyvTjFI2J6m6oFrRVlDXglb5EjdJZtaeNsMlDrNzSXVSI_mupn0SnuQrYyHp8TER69x9OlzIk6V-l2q4srpQLrfoyWwsCXY2ndkl1fbvU-xC2zdXNFq1J4IiWpQtU6YtXbrwLJNNazrFXmkRTMo9jxbAM_rlkRV6nmCDWFsCfqnu5mtl5TH-AijKoGyvYJqD4jR6NBBfcNx-sClvch2CKqgxLGW5-44adkTxH4jBxbjgVwVufAa-JqCH3KhspFbHVDbQB8VXX65dHkkAUnmcQITpfIn1rtIUWLhEm8-DfOXA8aIE8xYI9s_RSsgXjnKKaW1FhBVcyGVBzeEDHEQtVKZdctVCXePoN0C7rAlqZV0ra_hyIWU7nXzSybus84sLQ3DpdUcj95PrlGpVNZ-C8F3CTM8bUF25X5Vc1RzYwQsIHCAavbk4cjbDatRktUzdDJA1P8iKKcrIhaFaFTBEijzOGB9wqUdR79flhy1Y\n",
+			"url": "http://redbarroness.azurewebsites.net/api/escort/pictures/add",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "POST",
@@ -237,127 +470,16 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1441623411093,
+			"time": 1441886427336,
 			"name": "AddPictureToEscort",
 			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
 			"responses": []
 		},
 		{
-			"id": "61ea4a22-418c-868d-709e-bce8baab2b72",
+			"id": "81036d5d-8f74-79ee-9fbb-e5e59257eaa1",
 			"headers": "",
-			"url": "http://localhost:50825/api/Account/Register/Customer",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "POST",
-			"data": [
-				{
-					"key": "username",
-					"value": "rado_niko",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "email",
-					"value": "radko@a.v",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "phonenumber",
-					"value": "88888888",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "gender",
-					"value": "male",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "password",
-					"value": "rado_niko",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "confirmpassword",
-					"value": "rado_niko",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1440949288558,
-			"name": "RegisterCustomer",
-			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
-			"responses": [],
-			"folder": "7c654161-bfe7-b13e-516f-8875b6adf1e0"
-		},
-		{
-			"id": "82436b7c-3b1e-b876-96f7-9ae13c36cdd0",
-			"headers": "Authorization: Bearer QFEhBSImlQmcZld9PJf6XQxO4dtGFQUzvd4MGDrKsj5DD0oh7UJNWfjN_Gsw-v8oXlIsXopmhGksAzZijC62wS3wsbjrQ2v9xRy7LOLvw-0O8NDTBlDD6NUcU6iILlXOnPzxu-p-1ViTQ8L4F135kycuJx37eR7JHvWGxq0wklWTcLuLVMQmN1J1SUXTXXCuxw4_eGJAY36S1x1FWYEUaCOiwEtUZ4R2zCvt6aZ7DtzWU_7G2nB_rBrloKN9VJSyFSP8GC_OwhZtozcYG8SAoevXRIOf4EkglZf6CC38RcrUHdAKbScZFHLBZLrNZnwJQQamVpJsXJ1Y15NtX0nsscA56G37phvInxYD73Wgd6GOj0vHaF3wmTfwmjtRLvZMP98e_Q_5vY82WCAXCUIqKG3U8IUW0AobyAIYFqL4T0g63DrPBIc-q2TtgYxmji1YDoTh3Eoz5NPSDSZZlGykJ003elt2oIaBwvaQ0GVKrqvjJULhoWrkyndk2VQA_8xr\n",
-			"url": "http://localhost:50825/api/escort/pictures/5/change",
-			"pathVariables": {},
-			"preRequestScript": "",
-			"method": "PUT",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
-			"data": [],
-			"dataMode": "urlencoded",
-			"name": "ChangeProfilePicture",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1441623647241,
-			"version": 2,
-			"responses": [],
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"folder": "52823787-dcb5-630c-13e0-e580a2779845"
-		},
-		{
-			"id": "9f0a3f7f-2e53-ab22-e15a-9fc0627f3885",
-			"headers": "Authorization: Bearer LA6IDjfQ7uVYEjhFitCHxY-fhP1c6AtrcT1fH8x36A5-ThKWWtrnvps95SExukdEG1QpjUkz7bJXevB26bshsazrJUOLgeopfARBt_5P1KgM9JI1wLJuZCAlSvAyjntIFOzTzFawhoyoFwb1u-RtBSuae7LgWj_hT0-DzSnzVShZBm3qRL0CTi9dS2_DT_wKewxS_k_JX9p2V5DGixoaqGdMfCgk4cIZtgGObn_yV_Zg7h2VxU4e-jQOjeLvGmRi-bkUzw0D-KKbCrniCnDf3I0wI779EX3zCrumr-SzMLaIoxVTJCGuRfIdcrqJk3kZd_K5Wv7M_qFNgaf9jm7LugMET7kbsvZWh5n9dUk7brGf1W7G4bHGfWn-oCYa-CYyxRsTyslY2DXpX_5iWg1QkwKOSrAdv2Cj5WIk7V2bUP7f48mVCh02BN4N_LC6IZAdL4nX3PAtVuI0Lx_MaV-QBYUvjhjxtSM7WgQ1EILYhOUNRYuJRBS8kmVgEUAQCd9q\n",
-			"url": "http://localhost:50825/api/escort/pricelist/edit",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "PATCH",
-			"data": [
-				{
-					"key": "HourRate",
-					"value": "20",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "ThreeHoursRate",
-					"value": "50",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1441041329215,
-			"name": "EditEscortPriceList",
-			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
-			"responses": [],
-			"folder": "52823787-dcb5-630c-13e0-e580a2779845"
-		},
-		{
-			"id": "ac4bc20f-abd8-1c33-3f31-94d0e2c2a44c",
-			"headers": "",
-			"url": "http://localhost:50825/api/guest/escorts",
+			"url": "http://redbarroness.azurewebsites.net/api/guest/escorts/escort2",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "GET",
@@ -367,36 +489,16 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1440863804545,
-			"name": "GuestGetsAllEscorts",
+			"time": 1441884673957,
+			"name": "GuestGetsEscortByUserName",
 			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
-			"responses": [],
-			"folder": "7858efb4-5873-b55c-2ddd-54db64b8ae68"
-		},
-		{
-			"id": "cd544f8c-aea5-3ec8-d9fc-a38d108e1e03",
-			"headers": "Authorization: Bearer Y52K-V-8uM4ui5teDTCFM1Bxha-ig2PjboWU2m3cKyLejhdZPqbzPJ5Z53BCc9TYYgnWzsU8y8owD8FL8OJBHd9SDDkRLVxKPDfhBxMz9Wocu2p3F3f0lJaplb3iSQpxkTB5vBzKVHR7RDsm5GMs-Y3WxrKaMNInp5xtRJ-nTqK20mzRGMQXhRe4Vq_9CovRyIRFI8FA1uIbVMtyYTWwkG6azKzHrbRI7bTrzBBFKtqHulYnbeSCsB-bH-QIZjp2lmowK4-PAWkXyn56OVCUHxNbTfXU_NfBO5UjFCiyutf-j44eoo_6cRI_3NUa3lhcCsjNzOwGSMZKRxMXMvRGnZsOxCJwjGu2h2-uHhWpg_R-dhkmNkMQcZyJEROs1SNVFmQUdC4tmw-AzwfDY67TQTg42ymwM__EOD-I0N3wX3sB6e117EkDC8NyTsTlnANoGsC5aOO3j3hYtW4hsMF9vdn1OT4RcwUDy-zCdco8HPiK1md6R2nDu6DpKFsXGqtD\n",
-			"url": "http://localhost:50825/api/escort/delete",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "DELETE",
-			"data": [],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1441626306930,
-			"name": "DeleteLogedEscort",
-			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
 			"responses": []
 		},
 		{
-			"id": "cdc8450d-7233-16e9-ad89-0d2b9a3897af",
+			"id": "8a8fe0ba-920a-ba1f-9b7f-bdc6d9dbb24f",
 			"headers": "",
-			"url": "http://localhost:50825/api/Account/Register/Escort",
+			"url": "http://redbarroness.azurewebsites.net/api/Account/Register/Escort",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "POST",
@@ -473,131 +575,16 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1441628378346,
+			"time": 1441884692482,
 			"name": "RegisterEscort",
 			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
 			"responses": []
 		},
 		{
-			"id": "de67cb8b-b4e9-aa1d-383b-7a27363a4a87",
-			"headers": "Authorization: Bearer yxOEfMoWiMPMPPok-0WsCHpIXTK2oUXPfm8IHUPuRYExsjIXwPRrfA0HcVYn2p1GMlNmA0V3JPAaOxFkEMjvqt-oKtOx-DmjmCMsQ7n-nOxLgGtrguuzQ_ZNgeCdKp0jWQpyUDS_9yHuvWkh0yUUZZux2K4KWnNbKVRB0QQV2vKmy_peQZo9pnc45wybJ5hNN_qJCq4cRDigt-hDWDXBJFZNrtc_zlfuNS_Afgij29-kwe_uU7Kf_k0nSNXlymdWqm2a4veyPKVI1N7UB_9H9uhFhyu-h4xILxZdfnTt_LCw1yhTieTfOWJ--oIgu6K6i9G-WrDvNbaxPvT3a4RGi49fIMkdSWH_0smNaSfsd2_q813LDFr--tVpEm038jMLMAlnJOqnqeJ91SjTl29Pi18CWEkivRkK7FUksMQYJD8vuinvmbC8S711SonFFib49-kDC_7XjGzX7QW8QGSzkxgy5tgK3RjVGEo19oge6rCrRkcqeOzziCGIXOh3dGA2bW_2axE2b_kcUMlVs_iQ1A\n",
-			"url": "http://localhost:50825/api/escort-review/escort2/add",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "POST",
-			"data": [
-				{
-					"key": "content",
-					"value": "super",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "rating",
-					"value": "5",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "escortname",
-					"value": "escort1",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1441610098668,
-			"name": "ReviewSubmit",
-			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
-			"responses": []
-		},
-		{
-			"id": "e48cbdf3-4f4a-820e-cbd4-b0df31e53f0f",
-			"headers": "Authorization: Bearer C-3XtwmT_EkC8v1LtqCvvJkJaJEgfaNuuSx9VWYuGaCTfWJ6-BI3o1j5qgWnX2mXloRKrOT-PYI1qg8vznZDFxDyOPRfvwCE7yIj1EsraV_P84rdBmZj6cfAFyP_jj3ISF_9CstVMad4KW7sMBfiMFg1WXZ4dy0iOBWUmABim0kxsqb_p2w4PM828R-dEEYp3gt9KRndf69gzVI3f5-NiN6afJfVDpnPqzoVneQ5BYw0K11HT4entDyem3Q-FQidSN2LOXSRtHgDlB_h_TFp2XyHMhy8lQhensa28uUsLFbkZrnwr5u3T3LMhbivgkkS_P97ywfz7wdNZ-Fzytn0G1YQ-9Skl2hRapp9oybkLIvmAotqwRvKJf4gRF6_upf7j3iB_ichX_Ul6L8jxNqwDukP31Mr9mUy9wJYFpJS3a88Ont5Nr6Bxdu7G8oAPMKf7BLsFgbboIhW2c-ovtnuZEFaz9blvljMQ4v7ddvAQb9O0i83CW33Ssu-UyOQnsGi\n",
-			"url": "http://localhost:50825/api/escort/appointments",
-			"preRequestScript": "",
-			"pathVariables": {},
-			"method": "POST",
-			"data": [
-				{
-					"key": "pagesize",
-					"value": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "page",
-					"value": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "searchByDate",
-					"value": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "searchByCustomer",
-					"value": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "location",
-					"value": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "filter",
-					"value": "",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "urlencoded",
-			"version": 2,
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1441631317410,
-			"name": "GetAppointments",
-			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
-			"responses": []
-		},
-		{
-			"id": "f9d1b287-e4bc-e1e5-ed53-e9cf523cfe1b",
-			"headers": "Authorization: Bearer QFEhBSImlQmcZld9PJf6XQxO4dtGFQUzvd4MGDrKsj5DD0oh7UJNWfjN_Gsw-v8oXlIsXopmhGksAzZijC62wS3wsbjrQ2v9xRy7LOLvw-0O8NDTBlDD6NUcU6iILlXOnPzxu-p-1ViTQ8L4F135kycuJx37eR7JHvWGxq0wklWTcLuLVMQmN1J1SUXTXXCuxw4_eGJAY36S1x1FWYEUaCOiwEtUZ4R2zCvt6aZ7DtzWU_7G2nB_rBrloKN9VJSyFSP8GC_OwhZtozcYG8SAoevXRIOf4EkglZf6CC38RcrUHdAKbScZFHLBZLrNZnwJQQamVpJsXJ1Y15NtX0nsscA56G37phvInxYD73Wgd6GOj0vHaF3wmTfwmjtRLvZMP98e_Q_5vY82WCAXCUIqKG3U8IUW0AobyAIYFqL4T0g63DrPBIc-q2TtgYxmji1YDoTh3Eoz5NPSDSZZlGykJ003elt2oIaBwvaQ0GVKrqvjJULhoWrkyndk2VQA_8xr\n",
-			"url": "http://localhost:50825/api/escort/pictures/2/delete",
-			"pathVariables": {},
-			"preRequestScript": "",
-			"method": "DELETE",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
-			"data": [],
-			"dataMode": "urlencoded",
-			"name": "DeletePictureById",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1441623512777,
-			"version": 2,
-			"responses": [],
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"folder": "52823787-dcb5-630c-13e0-e580a2779845"
-		},
-		{
-			"id": "fb9cc595-e93e-62ff-83bd-6472793a0e8e",
-			"headers": "Authorization: Bearer yxOEfMoWiMPMPPok-0WsCHpIXTK2oUXPfm8IHUPuRYExsjIXwPRrfA0HcVYn2p1GMlNmA0V3JPAaOxFkEMjvqt-oKtOx-DmjmCMsQ7n-nOxLgGtrguuzQ_ZNgeCdKp0jWQpyUDS_9yHuvWkh0yUUZZux2K4KWnNbKVRB0QQV2vKmy_peQZo9pnc45wybJ5hNN_qJCq4cRDigt-hDWDXBJFZNrtc_zlfuNS_Afgij29-kwe_uU7Kf_k0nSNXlymdWqm2a4veyPKVI1N7UB_9H9uhFhyu-h4xILxZdfnTt_LCw1yhTieTfOWJ--oIgu6K6i9G-WrDvNbaxPvT3a4RGi49fIMkdSWH_0smNaSfsd2_q813LDFr--tVpEm038jMLMAlnJOqnqeJ91SjTl29Pi18CWEkivRkK7FUksMQYJD8vuinvmbC8S711SonFFib49-kDC_7XjGzX7QW8QGSzkxgy5tgK3RjVGEo19oge6rCrRkcqeOzziCGIXOh3dGA2bW_2axE2b_kcUMlVs_iQ1A\n",
-			"url": "http://localhost:50825/api/customer/get",
+			"id": "a912d10d-9019-fa41-7592-b595e45e0658",
+			"headers": "",
+			"url": "http://redbarroness.azurewebsites.net/api/guest/escorts",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "GET",
@@ -607,10 +594,193 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1441608935334,
-			"name": "GetCustomerProfile",
+			"time": 1441884655177,
+			"name": "GuestGetsAllEscorts",
 			"description": "",
-			"collectionId": "5395aaa3-fb08-3c61-bcbe-1e40b36def28",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "af242233-d419-0226-8aae-2b5ba9418bdb",
+			"headers": "Authorization: Bearer oRVEAHfj_7QSdQveNPVPu2ozJyvTjFI2J6m6oFrRVlDXglb5EjdJZtaeNsMlDrNzSXVSI_mupn0SnuQrYyHp8TER69x9OlzIk6V-l2q4srpQLrfoyWwsCXY2ndkl1fbvU-xC2zdXNFq1J4IiWpQtU6YtXbrwLJNNazrFXmkRTMo9jxbAM_rlkRV6nmCDWFsCfqnu5mtl5TH-AijKoGyvYJqD4jR6NBBfcNx-sClvch2CKqgxLGW5-44adkTxH4jBxbjgVwVufAa-JqCH3KhspFbHVDbQB8VXX65dHkkAUnmcQITpfIn1rtIUWLhEm8-DfOXA8aIE8xYI9s_RSsgXjnKKaW1FhBVcyGVBzeEDHEQtVKZdctVCXePoN0C7rAlqZV0ra_hyIWU7nXzSybus84sLQ3DpdUcj95PrlGpVNZ-C8F3CTM8bUF25X5Vc1RzYwQsIHCAavbk4cjbDatRktUzdDJA1P8iKKcrIhaFaFTBEijzOGB9wqUdR79flhy1Y\n",
+			"url": "http://redbarroness.azurewebsites.net/api/escort/appointments/1/cancel",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886518493,
+			"name": "CancelAppointment",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "cdb2117a-1703-ba19-d312-d0ee14553401",
+			"headers": "Authorization: Bearer cOdIbJmAooIywWbjof_60bofglw4SV8mWf8tJ4BQAojJu8nBpA7YcN0pmGeVUjzED-TlphdlRPbc33wWBA9z-dIKTCO14qm92HYiZ4UuBcNNEQ_zn7VBEXNoMkIyFVITLh_1O4pyMfflS1aQRysCS0rBl7RPREjLtdkAbGtO_EC_HL7PeMTUIlEruX0McpJow1PtdFQmRMI-AJ1-KCDuUSlR8QlmH2jGKjW35DOHYTwxwz1nA92JboFg9AkjX4tA2q6Db7Mxu3UBXNeWScI84KLZkpsxuOPI_TXzqsvN5qzLM9WJDT3pyA7imo3cS2pYsYciCKLZEFeu2e5h6HKjq6hhtQq1ws07gHE-DyGJwWYTnoG4jePGusFb5c7RGQvxEtRyNQYwJEHBhYD4kWtYuehYN7_YzrwS4Hb7heQNHn7fCqj-h2RtdLPqi2oHi9Y1CRg2faz3cSRAWlqMaVMv83ev7O6FfH0TY8ocM2T0pUIwBFKQWiPilx4nbcFqVEt7DtDHV-S8uQbsnDmUbI2o3Q\n",
+			"url": "http://redbarroness.azurewebsites.net/api/customer/appointment/1/cancel",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886248315,
+			"name": "AppointmentCancel",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "d5092f7b-4376-4dc4-14c7-6ce7faf90af3",
+			"headers": "",
+			"url": "http://redbarroness.azurewebsites.net/api/Account/Register/Customer",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "rado_niko",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "radko@a.v",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "phonenumber",
+					"value": "88888888",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "gender",
+					"value": "male",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "rado_niko",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "confirmpassword",
+					"value": "rado_niko",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441884794433,
+			"name": "RegisterCustomer",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "d7eef6fb-fd41-dbe0-ffec-bbe5a0cea035",
+			"headers": "Authorization: Bearer oRVEAHfj_7QSdQveNPVPu2ozJyvTjFI2J6m6oFrRVlDXglb5EjdJZtaeNsMlDrNzSXVSI_mupn0SnuQrYyHp8TER69x9OlzIk6V-l2q4srpQLrfoyWwsCXY2ndkl1fbvU-xC2zdXNFq1J4IiWpQtU6YtXbrwLJNNazrFXmkRTMo9jxbAM_rlkRV6nmCDWFsCfqnu5mtl5TH-AijKoGyvYJqD4jR6NBBfcNx-sClvch2CKqgxLGW5-44adkTxH4jBxbjgVwVufAa-JqCH3KhspFbHVDbQB8VXX65dHkkAUnmcQITpfIn1rtIUWLhEm8-DfOXA8aIE8xYI9s_RSsgXjnKKaW1FhBVcyGVBzeEDHEQtVKZdctVCXePoN0C7rAlqZV0ra_hyIWU7nXzSybus84sLQ3DpdUcj95PrlGpVNZ-C8F3CTM8bUF25X5Vc1RzYwQsIHCAavbk4cjbDatRktUzdDJA1P8iKKcrIhaFaFTBEijzOGB9wqUdR79flhy1Y\n",
+			"url": "http://redbarroness.azurewebsites.net/api/escort/pricelist",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886397182,
+			"name": "GetPriceList",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "f1cfa1a2-0222-6314-0b2e-7d065fa7e627",
+			"headers": "Authorization: Bearer oRVEAHfj_7QSdQveNPVPu2ozJyvTjFI2J6m6oFrRVlDXglb5EjdJZtaeNsMlDrNzSXVSI_mupn0SnuQrYyHp8TER69x9OlzIk6V-l2q4srpQLrfoyWwsCXY2ndkl1fbvU-xC2zdXNFq1J4IiWpQtU6YtXbrwLJNNazrFXmkRTMo9jxbAM_rlkRV6nmCDWFsCfqnu5mtl5TH-AijKoGyvYJqD4jR6NBBfcNx-sClvch2CKqgxLGW5-44adkTxH4jBxbjgVwVufAa-JqCH3KhspFbHVDbQB8VXX65dHkkAUnmcQITpfIn1rtIUWLhEm8-DfOXA8aIE8xYI9s_RSsgXjnKKaW1FhBVcyGVBzeEDHEQtVKZdctVCXePoN0C7rAlqZV0ra_hyIWU7nXzSybus84sLQ3DpdUcj95PrlGpVNZ-C8F3CTM8bUF25X5Vc1RzYwQsIHCAavbk4cjbDatRktUzdDJA1P8iKKcrIhaFaFTBEijzOGB9wqUdR79flhy1Y\n",
+			"url": "http://redbarroness.azurewebsites.net/api/escort/pricelist/edit",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PATCH",
+			"data": [
+				{
+					"key": "HourRate",
+					"value": "20",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "ThreeHoursRate",
+					"value": "50",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441886405472,
+			"name": "EditEscortPriceList",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
+			"responses": []
+		},
+		{
+			"id": "ff70a2ac-342e-2c85-8d81-1fad11440bef",
+			"headers": "",
+			"url": "http://redbarroness.azurewebsites.net/token ",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "escort2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "escort2",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1441884834146,
+			"name": "LogIn",
+			"description": "",
+			"collectionId": "5ffd9f4c-5510-18b3-a651-a3994f7f0f94",
 			"responses": []
 		}
 	]
