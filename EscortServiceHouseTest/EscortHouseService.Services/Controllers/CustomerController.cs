@@ -220,11 +220,21 @@ namespace EscortHouseService.Services.Controllers
             {
                 customer.Email = model.Email;
             }
-            if ((model.Password != null && model.ConfirmPassword != null) && model.Password.Equals(model.ConfirmPassword))
-            {
-                customer.PasswordHash = model.Password;
-            }
 
+            if ((model.Password != null && model.ConfirmPassword != null))
+            {
+                if (model.Password.Equals(model.ConfirmPassword))
+                {
+                    var passwordHasher = new PasswordHasher();
+                    customer.PasswordHash = passwordHasher.HashPassword(model.Password);
+                }
+                else
+                {
+                    return this.Content(HttpStatusCode.BadRequest,
+                        string.Format("Wrong password confirmation"));
+                }
+            }
+            
             this.EscortServiceData.SaveChanges();
 
             return this.Ok();
