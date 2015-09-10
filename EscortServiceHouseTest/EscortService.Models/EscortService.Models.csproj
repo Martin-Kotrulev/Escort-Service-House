@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
     <Compile Include="Appointment.cs" />
     <Compile Include="Enumerations\BreastsType.cs" />
     <Compile Include="Picture.cs" />
