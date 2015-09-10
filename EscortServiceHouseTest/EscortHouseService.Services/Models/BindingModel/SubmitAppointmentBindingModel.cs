@@ -22,5 +22,7 @@
         [Required]
         public string EscortName { get; set; }
 
+        public string Address { get; set; }
+
     }
 }

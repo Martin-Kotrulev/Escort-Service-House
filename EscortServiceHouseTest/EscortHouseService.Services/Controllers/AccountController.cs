@@ -432,7 +432,8 @@ namespace EscortHouseService.Services.Controllers
                 BreastsType = (BreastsType)Enum.Parse(typeof(BreastsType), model.BreastsType, true),
                 Description = model.Description,
                 HairColour = model.HairColour,
-                IsDeleted = false
+                IsDeleted = false,
+                AddressOfService = model.AddressOfService
             };
 
             IdentityResult result = await this.UserManager.CreateAsync(user, model.Password);

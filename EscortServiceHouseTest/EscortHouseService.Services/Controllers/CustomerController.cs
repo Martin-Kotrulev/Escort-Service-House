@@ -97,6 +97,7 @@ namespace EscortHouseService.Services.Controllers
                 IsCanceled = false,
                 CustomerId = currentUserId,
                 EscortId = escortId,
+                Address = appData.Address
             };
 
             this.EscortServiceData.Appointments.Add(newAppointment);

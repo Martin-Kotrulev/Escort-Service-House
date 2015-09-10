@@ -153,6 +153,8 @@ namespace EscortHouseService.Services.Models
         public string HairColour { get; set; }
 
         public string B64 { get; set; }
+
+        public string AddressOfService { get; set; }
     }
 
     public class RegisterExternalBindingModel
