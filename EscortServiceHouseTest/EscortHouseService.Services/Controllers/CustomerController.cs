@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace EscortHouseService.Services.Controllers
 {
-    using System.Threading;
     using EscortService.Models;
     using EscortService.Models.Users;
     using Microsoft.AspNet.Identity;
@@ -18,6 +15,7 @@ namespace EscortHouseService.Services.Controllers
     [RoutePrefix("api/customer")]
     public class CustomerController : BaseApiController
     {
+        //GET: api/customer/get
         [HttpGet]
         [Route("get")]
         public IHttpActionResult GetLogedCustomer()
@@ -42,6 +40,7 @@ namespace EscortHouseService.Services.Controllers
             return this.Ok(result);
         }
 
+        //POST: api/customer/appointment/submit
         [HttpPost]
         [Route("appointment/submit")]
         public IHttpActionResult SubmitAppointment(SubmitAppointmentBindingModel appData)
@@ -97,7 +96,6 @@ namespace EscortHouseService.Services.Controllers
                 IsCanceled = false,
                 CustomerId = currentUserId,
                 EscortId = escortId,
-                Address = appData.Address
             };
 
             this.EscortServiceData.Appointments.Add(newAppointment);
@@ -109,12 +107,12 @@ namespace EscortHouseService.Services.Controllers
                     appData.EscortName));
         }
 
+        //PATCH: api/customer/appointment/{id}/cancel
         [HttpPatch]
         [Route("appointment/{id}/cancel")]
         public IHttpActionResult CancelAppointment([FromUri]int id)
         {
             var currentUserId = this.User.Identity.GetUserId();
-
             var appointment = this.EscortServiceData.Appointments.Find(id);
 
             if (appointment == null || appointment.CustomerId != currentUserId)
@@ -133,12 +131,12 @@ namespace EscortHouseService.Services.Controllers
             }
 
             appointment.IsCanceled = true;
-
             this.EscortServiceData.SaveChanges();
 
             return this.Ok();
         }
 
+        //GET: api/customer/{town}
         [HttpGet]
         [Route("{town}")]
         public IHttpActionResult SearchEscortByTown(string town)
@@ -166,9 +164,11 @@ namespace EscortHouseService.Services.Controllers
                 return this.Content(HttpStatusCode.NotFound,
                     string.Format("There is no escort from {0} or town name is invalid", town));
             }
+
             return this.Ok(escortsFromThisTown);
         }
 
+        //GET: api/customer/review/{escortName}
         [HttpGet]
         [Route("review/{escortName}")]
         public IHttpActionResult GetEscortReviews(string escortName)
@@ -200,17 +200,29 @@ namespace EscortHouseService.Services.Controllers
                 return this.Content(HttpStatusCode.BadRequest,
                     string.Format("{0} have no reviews", escort.UserName));
             }
+
             return this.Ok(escortReview);
         }
-
         
-        [Route("editprofile")]
+        //PATCH: api/customer/edit
+        [Route("edit")]
         [HttpPatch]
         public IHttpActionResult EditProfil([FromBody]CustomerEditProfilBindingModel model)
         {
-            var loggedCutomerID = this.User.Identity.GetUserId();
+            var loggedCutomerId = this.User.Identity.GetUserId();
             var customer = this.EscortServiceData.Customers
-                .Find(loggedCutomerID);
+                .Find(loggedCutomerId);
+            bool isPasswordChanged = false;
+
+            if (model == null)
+            {
+                return this.BadRequest("Missing input data.");
+            }
+
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
 
             if (customer == null)
             {
@@ -228,6 +240,7 @@ namespace EscortHouseService.Services.Controllers
                 {
                     var passwordHasher = new PasswordHasher();
                     customer.PasswordHash = passwordHasher.HashPassword(model.Password);
+                    isPasswordChanged = true;
                 }
                 else
                 {
@@ -238,7 +251,21 @@ namespace EscortHouseService.Services.Controllers
             
             this.EscortServiceData.SaveChanges();
 
-            return this.Ok();
+            if (model.Email != null && !isPasswordChanged)
+            {
+                return this.Ok(string.Format("Your email changed successfully to: {0}", model.Email));
+            }
+
+            if (model.Email != null && isPasswordChanged)
+            {
+                return this.Ok(new
+                {
+                    Message = string.Format("Your email changed successfully to: {0}", model.Email),
+                    Message1 = "Your password changed successfully."
+                });                
+            }
+
+            return this.Ok("Your passwod changed successfully.");
         }
     }
 }

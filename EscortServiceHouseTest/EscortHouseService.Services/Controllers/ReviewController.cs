@@ -18,7 +18,7 @@ namespace EscortHouseService.Services.Controllers
     public class ReviewController : BaseApiController
     {
 
-        //[Authorize(Roles = "Customer")]
+        //POST: api/escort-review/add
         [Route("add")]
         [HttpPost]
         public IHttpActionResult AddReview(ReviewBindingModel reviewModel)

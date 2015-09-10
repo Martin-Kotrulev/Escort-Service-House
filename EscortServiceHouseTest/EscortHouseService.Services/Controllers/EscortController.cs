@@ -24,8 +24,7 @@
         [HttpPost]
         [Route("appointments")]
         public IHttpActionResult GetEscortAppointments([FromBody] AppointmentsBindingModel appModel)
-        {
-            
+        {          
             if (appModel == null)
             {
                 return this.BadRequest("Missing appointments binding model data");
@@ -35,7 +34,6 @@
             {
                 return this.BadRequest(this.ModelState);
             }
-
 
             int pageSize = appModel.PageSize ?? PAGE_SIZE;
             int page = appModel.Page ?? PAGE;
@@ -59,20 +57,9 @@
                 return this.NotFound();
             }
 
-            //if (!Roles.IsUserInRole(this.User.Identity.GetUserName(), "Escort"))       
-            //{
-            //    return this.Unauthorized();
-            //}
-
-            //if (!Roles.IsUserInRole(id, "Escort"))
-            //{
-            //    return this.Unauthorized();
-            //}
-            
             var appointments = this.EscortServiceData.Appointments
                 .Where(a => a.EscortId == id && !a.IsCanceled)
                 .OrderByDescending(a => a.StartTime).ToList();
-
 
             //search logic
             if (appModel.SearchByDate != null)
@@ -97,7 +84,6 @@
             {
                 appointments = appointments.Where(a => a.Location.ToLower() == appModel.Location.ToLower()).ToList();
             }//end search logic
-
 
 
             //filter logic (Date is not expired)
@@ -150,8 +136,7 @@
             {
                 appointments = appointments.Skip(skip).Take(pageSize).ToList();
             }
-
-            
+           
             List<AppointmentViewModel> viewModelAppointments = new List<AppointmentViewModel>();
 
             foreach (var appointment in appointments)
@@ -169,8 +154,6 @@
             });
         }
 
-
-
         // GET api/escort/pricelist
         [Authorize]
         [HttpGet]
@@ -178,7 +161,6 @@
         public IHttpActionResult GetPriceList()
         {
             var escortId = this.User.Identity.GetUserId();
-
             var escort = this.EscortServiceData.Escorts
                 .FirstOrDefault(e => !e.IsDeleted && e.Id == escortId);
 
@@ -271,8 +253,7 @@
             {
                 priceList.WeeklyRate = model.WeeklyRate;
             }
-
-            
+           
             this.EscortServiceData.PriceLists.AddOrUpdate(priceList);
             this.EscortServiceData.SaveChanges();
 
@@ -282,12 +263,12 @@
             });
         }
 
+        //PATCH:  api/escort/appointments/{id}/cancel
         [HttpPatch]
         [Route("appointments/{id}/cancel")]
         public IHttpActionResult CancelAppointment([FromBody]int id)
         {
             var currentUserId = this.User.Identity.GetUserId();
-
             var appointment = this.EscortServiceData.Appointments.Find(id);
 
             if (appointment == null || appointment.EscortId != currentUserId)
@@ -306,18 +287,17 @@
             }
 
             appointment.IsCanceled = true;
-
             this.EscortServiceData.SaveChanges();
 
             return this.Ok();
         }
 
+        //PATCH:  api/escort/appointments/{id}/confirm
         [HttpPatch]
         [Route("appointments/{id}/confirm")]
         public IHttpActionResult ConfirmAppointment([FromUri]int id)
         {
             var currentUserId = this.User.Identity.GetUserId();
-
             var appointment = this.EscortServiceData.Appointments.Find(id);
 
             if (appointment == null || appointment.EscortId != currentUserId)
@@ -348,16 +328,17 @@
             }
 
             appointment.IsApproved = true;
-
             this.EscortServiceData.SaveChanges();
 
             return this.Ok();
         }
 
+        //PATCH:  api/escort/appointments/{id}/reject
+        [HttpPatch]
+        [Route("appointments/{id}/reject")]
         public IHttpActionResult RejectAppointment([FromUri]int id)
         {            
             var currentUserId = this.User.Identity.GetUserId();
-
             var appointment = this.EscortServiceData.Appointments.Find(id);
 
             if (appointment == null || appointment.EscortId != currentUserId)
@@ -388,12 +369,12 @@
             }
 
             appointment.IsApproved = false;
-
             this.EscortServiceData.SaveChanges();
 
             return this.Ok();
         }
 
+        //POST:  api/escort/pictures/add
         [HttpPost]
         [Route("pictures/add")]
         public IHttpActionResult EscortAddPicture([FromBody] PictureBindingModel model)
@@ -409,7 +390,6 @@
             }
 
             var escortId = this.User.Identity.GetUserId();
-
             var escort = this.EscortServiceData.Escorts
                 .FirstOrDefault(e => !e.IsDeleted && e.Id == escortId);
 
@@ -447,12 +427,12 @@
                     newPicture.Id, escort.UserName));
         }
 
+        //DELETE:  api/escort/pictures/{id}/delete
         [HttpDelete]
         [Route("pictures/{id:int}/delete")]
         public IHttpActionResult DeletePictureById(int id)
         {
             var escortId = this.User.Identity.GetUserId();
-
             var escort = this.EscortServiceData.Escorts
                 .FirstOrDefault(e => !e.IsDeleted && e.Id == escortId);
 
@@ -468,7 +448,6 @@
 
             if (picture == null)
             {
-
                 return this.Content(HttpStatusCode.OK, new
                 {
                     Message = string.Format("There is no picture with id: {0}", id)
@@ -494,12 +473,12 @@
             });
         }
 
+        //PUT:  api/escort/pictures/{id}/change
         [HttpPut]
         [Route("pictures/{id:int}/change")]
         public IHttpActionResult ChangeProfilePicture(int id)
         {
             var escortId = this.User.Identity.GetUserId();
-
             var escort = this.EscortServiceData.Escorts
                 .FirstOrDefault(e => !e.IsDeleted && e.Id == escortId);
 
@@ -541,7 +520,7 @@
             });
         }
 
-
+        //DELETE:  api/escort/delete
         [HttpDelete]
         [Route("delete")]
         public IHttpActionResult DeleteLogedEscort()
@@ -573,6 +552,5 @@
                 Message = string.Format("Escort: {0} deleted successfully", escort.UserName)
             });
         }
-
     }
 }

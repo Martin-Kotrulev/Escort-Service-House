@@ -3,25 +3,21 @@
 namespace EscortHouseService.Services.Controllers
 {
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Linq;
-    using EscortService.Models.Users;
-    using EscortServiceHouse.Data;
     using Models.ViewModels;
-    using Microsoft.Web;
     using System.Web.Http.OData;
 
     [AllowAnonymous]
     [RoutePrefix("api/Guest")]
     public class GuestController : BaseApiController
     {
+        //GET: api/guest/escorts
         [HttpGet]
         [Route("Escorts")]
         [EnableQuery]
         public IHttpActionResult GetAllEscorts()
         {
-            var escorts = this.EscortServiceData.Escorts.Where(e => !e.IsDeleted);
-            
+            var escorts = this.EscortServiceData.Escorts.Where(e => !e.IsDeleted);          
             List<GuestEscortViewModel> viewModelEscort = new List<GuestEscortViewModel>();
 
             foreach (var escort in escorts)
@@ -32,6 +28,7 @@ namespace EscortHouseService.Services.Controllers
             return this.Ok(viewModelEscort);
         }
 
+        //GET: api/escorts/count
         [HttpGet]
         [Route("Escorts/count")]
         public IHttpActionResult GetEscortsCount()
@@ -41,6 +38,7 @@ namespace EscortHouseService.Services.Controllers
             return this.Ok(result);
         }
 
+        //GET: api/escorts/{name}
         [HttpGet]
         [Route("Escorts/{name}")]
         public IHttpActionResult GetEscortInfo(string name)
