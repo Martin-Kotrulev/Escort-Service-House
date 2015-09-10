@@ -35,6 +35,8 @@ namespace EscortService.Models
         [Required]
         public string CustomerId { get; set; }
 
+        public string Address { get; set; }
+
         [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
 
