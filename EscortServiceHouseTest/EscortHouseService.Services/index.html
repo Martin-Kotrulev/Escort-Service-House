@@ -5,133 +5,293 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Red Barrones</title>
-	<script src="Scripts/jquery-1.10.2.min.js"></script>
-	<script src="Scripts/bootstrap.min.js"></script>
-	<script src="Scripts/webapi.js"></script>
-	<link href="Content/bootstrap.min.css" rel="stylesheet">
-	
-	<style>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/webapi.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet">
+
+    <style>
         .profnav {
-            position:relative;
+            position: relative;
         }
-        .guest>button {
+
+        .guest > button {
             height: 100px;
             font-size: 35px;
             margin-bottom: 10px;
         }
+
         .jcont {
-             background-color: inherit;
+            background-color: inherit;
         }
+
         .navbar {
             background-color: blueviolet;
         }
+
         .jumbotron {
             margin-top: 50px;
             margin-bottom: 10px;
         }
-        .jumbotron>h1 {
-            text-align:center;
-            color:crimson;
-        }
-        .jumbotron>p {
-            text-align:center;
-        }
-        .footer>div {
+
+            .jumbotron > h1 {
+                text-align: center;
+                color: crimson;
+            }
+
+            .jumbotron > p {
+                text-align: center;
+            }
+
+        .footer > div {
             margin-top: 25px;
         }
+
         .footer {
             position: relative;
             bottom: 5px;
-            top:auto;
+            top: auto;
         }
+
         .error {
             color: red;
         }
+
         #regComplete {
             color: green;
-            text-align:center;
+            text-align: center;
         }
+
         #profPic {
             border: 1px solid black;
         }
+
         #login_error {
             color: red;
         }
+
         #escorts {
             margin-top: 50px;
             list-style-type: none;
         }
+
         #escorts li {
-            height: 250px;
+            height: 280px;
             margin-bottom: 25px;
-            overflow:hidden;
+            overflow: hidden;
             border: 2px solid blueviolet;
-            border-radius: 40%;
+            border-radius: 20%;
         }
-        li>img {
-            position:absolute;
-            top:0;
-            left:0;
+
+        #profpic_cont {
+            overflow: hidden;
+            height: 280px;
+        }
+
+        li > img, #profPic {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            min-height: 100%;
+           
         }
-        li>img:hover {
-            opacity: 0.4;
-        }
+
+            li > img:hover {
+                opacity: 0.4;
+            }
+
         #login_error {
             margin-top: 35px;
             text-align: center;
         }
+
         .pagination {
             display: none;
             margin: auto;
         }
+
         .modal {
             display: none;
         }
+
         #desc {
             display: block;
         }
+
         .info-head {
             color: blueviolet;
             font-size: 1.7em;
         }
+
         #myModal p {
             font-size: 1.3em;
+        }
+
+        .user-panel .container>div {
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        .user-panel #prof_pic, #info_pan {
+            height: 400px;
+        }
+        .user-panel #info_ch_btn {
+            position: absolute;
+            bottom: 4px;
+            left: 75%;
+        }
+        .user-panel #prof_pic_ch {
+            position: absolute;
+            display: block;
+            bottom: 15px;
+            left: 15%;
+            z-index: 1;
+        }
+        .user-panel #pic_pan {
+            margin-top: 25px;
+            height: 480px;
+        }
+        .user-panel #pic_pan>div {
+            overflow: hidden;
+        }
+        .user-panel #pic_pan img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 100%;
+            max-width: 100%;
+        }
+        .user-panel #pic_pan img:hover {
+            opacity: 0.4;
+        }
+        .user-panel #pic_pan>div {
+            border: 1px solid black;
+            height: 50px;
+            margin-top: 15px;
+            height: 115px;
+        }
+        .user-panel #pics_ch_btn {
+            position: relative;
+            top: 30px;
+            display: block;
+            margin: auto;
+        }
+        .user-panel #app_pan {
+            height: 250px;
+            margin-top: 25px;
+            overflow-y: scroll;
+        }
+        .user-panel h1 {
+            text-align: center;
+        }
+        .user-panel #rev_pan {
+            margin-top: 25px;
+            overflow-y: scroll;
+            height: 205px; /*480*/
+        }
+        
+        .app span {
+            color: red;
+            font-size: 1.5em;
+        }
+        .app button {
+            height: 100%;
+        }
+        .glyphicon {
+            color: gold;
+        }
+        #app_head,#rev_head {
+            color: blueviolet;
+            font-size: 2em;
+        }
+        #info_pan, #pic_pan, #prof_pic, #app_pan, #rev_pan {
+            box-shadow: 10px 10px 5px #888888;
+            background-color:antiquewhite;
+        }
+        #info_pan {
+            padding: 15px;
+        }
+        #info_pan span {
+            color: blueviolet;
+            font-size: 1.2em;
+        }
+        #p_desc {
+            height: 80px;
+            overflow-y: scroll;
+        }
+        #prices {
+            height: 120px;
+        }
+        #prof_pic {
+            overflow:hidden;
+            padding: 0;
+        }
+        
+        #prof_pic>img {
+            max-width: 100%;
+            min-height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #wr_rev_btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        .user-panel {
+            display: none;
+        }
+        #profile_pic_modal img, #add_delete_pics_modal img {
+            min-height: 100%;
+            max-width: 100%;
+        }
+        #profile_pic_modal div, #add_delete_pics_modal div {
+            overflow: hidden;
+        }
+        #ch_profile_pic_err {
+            color: red;
+        }
+        #add_delete_pics_modal .container div, #profile_pic_modal .container div {
+            overflow: hidden;
+            height: 250px;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top"> <!-- Navigation bar-->
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">The Red Barroness</a>  
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <!-- Navigation bar-->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">The Red Barroness</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <form method="post" class="navbar-form navbar-right" onsubmit="login(); return false;">
+                    <div class="form-group">
+                        <input id="usr_name" type="text" placeholder="Username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input id="usr_pass" type="password" placeholder="Password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign in</button>
+                </form>
+                <ul class="nav nav-pills navbar-right profnav" role="tablist">
+                    <li role="presentation"><a id="home_btn" href="#">Profile</a></li>
+                   <!-- <li role="presentation"><a class="escort-btn" href="#">Appointmens</a></li>-->
+                    <li role="presentation"><a href="#" onclick="logout()">Logout</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
         </div>
-          <div id="navbar" class="navbar-collapse collapse">
-              <form method="post" class="navbar-form navbar-right" onsubmit="login(); return false;">
-                  <div class="form-group">
-                      <input id="usr_name" type="text" placeholder="Username" class="form-control">
-                  </div>
-                  <div class="form-group">
-                      <input id="usr_pass" type="password" placeholder="Password" class="form-control">
-                  </div>
-                  <button type="submit" class="btn btn-success">Sign in</button>
-              </form>
-              <ul class="nav nav-pills navbar-right profnav" role="tablist">
-                  <li role="presentation"><a id="home_btn" href="#">Profile</a></li>
-                  <li role="presentation"><a class="escort-btn" href="#">Appointmens</a></li>
-                  <li role="presentation"><a href="#" onclick="logout()">Logout</a></li>
-              </ul> 
-          </div><!--/.navbar-collapse -->    
-      </div>
     </nav> <!--End navigation bar-->
 
-    <div class="container jcont"> <!--Logo-->
+    <div class="container jcont">
+        <!--Logo-->
         <div class="jumbotron">
             <h1>The Red Barroness</h1>
             <p>Wellcome to the world of pleasure...</p>
@@ -147,134 +307,232 @@
         <button type="button" class="btn btn-warning col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2" onclick="enterGuestMode()">Continue as Guest -></button>
     </div> <!--End logo-->
 
-    <div class="container"> <!--Registration panel-->
+    <div class="container">
+        <!--Registration panel-->
         <form method="post" id="reg" class="form-horizontal" role="form" onsubmit="register(); return false;">
-           <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Username: </label>
-               <input id="Username" class="col-sm-3" type="text" name="Username" placeholder="Enter your username...">
-               <span class="error"></span>
-           </div>        
-           <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Email: </label>
-               <input id="Email" class="col-sm-3" type="text" name="Email" placeholder="Enter your email...">
-               <span class="error"></span>
-           </div>           
-           <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Phone Number: </label>
-               <input id="PhoneNumber" class="col-sm-3" type="text" name="PhoneNumber" placeholder="Enter your phone number...">
-               <span class="error"></span>
-           </div>              
-           <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Password: </label>
-               <input id="Password" class="col-sm-3" type="password" name="Password" placeholder="Enter your password...">
-               <span class="error"></span>
-           </div>         
-           <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Confirm Password: </label>
-               <input id="ConfirmPassword" class="col-sm-3" type="password" name="ConfirmPassword" placeholder="Confirm your password...">
-               <span class="error"></span>
-           </div>         
-           <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Gender: </label>
-               <label class="radio-inline col-sm-2"><input type="radio" name="Gender" value="Male" checked>Male</label>
-               <label class="radio-inline col-sm-1"><input type="radio" name="Gender" value="Female">Female</label>
-           </div>  
-           <div class="form-group">
-               <label class="control-label col-sm-4 col-xs-3 col-sm-offset-1">Profile Type: </label>
-               <label class="radio-inline col-sm-2"><input type="radio" name="Role" value="Customer" onclick="changeForm()" checked>Only Pleasure</label>
-               <label class="radio-inline col-sm-3"><input type="radio" name="Role" value="Escort" onclick="changeForm()">Work and Pleasure</label>
-           </div>
-           <div class="form-group escort-extra">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Town: </label>
-               <select form="reg" id="Town" class="col-sm-3" type="text" name="Town">
-                  <option value="Sofia" selected>Sofia</option>
-                  <option value="Plovdiv">Plovdiv</option>
-                  <option value="Varna">Varna</option>
-                  <option value="Burgas">Burgas</option>
-                  <option value="Ruse">Ruse</option>
-                  <option value="Stara Zagora">Stara Zagora</option>
-                  <option value="Pleven">Pleven</option>
-                  <option value="Sliven">Sliven</option>
-                  <option value="Dobrich">Dobrich</option>
-                  <option value="Shumen">Shumen</option>
-                  <option value="Pernik">Pernik</option>
-                  <option value="Haskovo">Haskovo</option>
-                  <option value="Yambol">Yambol</option>
-                  <option value="Pazardzhik">Pazardzhik</option>
-                  <option value="Blagoevgrad">Blaogevgrad</option>
-                  <option value="Veliko Tarnovo">Veliko Tarnovo</option>
-                  <option value="Vratza">Vratza</option>
-                  <option value="Gabrovo">Gabrovo</option>
-                  <option value="Asenovgrad">Asenovgrad</option>
-                   <option value="Vidin">Vidin</option>
+            <div class="form-group">
+                <label class="control-label col-sm-5 col-xs-4">Username: </label>
+                <input id="Username" class="col-sm-3 col-xs-7" type="text" name="Username" placeholder="Enter your username...">
+                <span class="error"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-5 col-xs-4">Email: </label>
+                <input id="Email" class="col-sm-3 col-xs-7" type="text" name="Email" placeholder="Enter your email...">
+                <span class="error"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-5 col-xs-4">Phone Number: </label>
+                <input id="PhoneNumber" class="col-sm-3 col-xs-7" type="text" name="PhoneNumber" placeholder="Enter your phone number...">
+                <span class="error"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-5 col-xs-4">Password: </label>
+                <input id="Password" class="col-sm-3 col-xs-7" type="password" name="Password" placeholder="Enter your password...">
+                <span class="error"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-5 col-xs-4">Confirm Password: </label>
+                <input id="ConfirmPassword" class="col-sm-3 col-xs-7" type="password" name="ConfirmPassword" placeholder="Confirm your password...">
+                <span class="error"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-5 col-xs-4">Gender: </label>
+                <label class="radio-inline col-sm-2 col-xs-3"><input type="radio" name="Gender" value="Male" checked>Male</label>
+                <label class="radio-inline col-sm-2 col-xs-3"><input type="radio" name="Gender" value="Female">Female</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-5 col-xs-4">Profile Type: </label>
+                <label class="radio-inline col-sm-2 col-xs-3"><input type="radio" name="Role" value="Customer" onclick="changeForm()" checked>Only Pleasure</label>
+                <label class="radio-inline col-sm-2 col-xs-3"><input type="radio" name="Role" value="Escort" onclick="changeForm()">Work and Pleasure</label>
+            </div>
+            <div class="form-group escort-extra">
+                <label class="control-label col-sm-5 col-xs-4">Town: </label>
+                <select form="reg" id="Town" class="col-sm-3 col-xs-7" type="text" name="Town">
+                    <option value="Sofia" selected>Sofia</option>
+                    <option value="Plovdiv">Plovdiv</option>
+                    <option value="Varna">Varna</option>
+                    <option value="Burgas">Burgas</option>
+                    <option value="Ruse">Ruse</option>
+                    <option value="Stara Zagora">Stara Zagora</option>
+                    <option value="Pleven">Pleven</option>
+                    <option value="Sliven">Sliven</option>
+                    <option value="Dobrich">Dobrich</option>
+                    <option value="Shumen">Shumen</option>
+                    <option value="Pernik">Pernik</option>
+                    <option value="Haskovo">Haskovo</option>
+                    <option value="Yambol">Yambol</option>
+                    <option value="Pazardzhik">Pazardzhik</option>
+                    <option value="Blagoevgrad">Blaogevgrad</option>
+                    <option value="Veliko Tarnovo">Veliko Tarnovo</option>
+                    <option value="Vratza">Vratza</option>
+                    <option value="Gabrovo">Gabrovo</option>
+                    <option value="Asenovgrad">Asenovgrad</option>
+                    <option value="Vidin">Vidin</option>
                 </select>
-           </div> 
-           <div class="form-group escort-extra">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Height (in meters): </label>
-               <input id="Height" class="col-sm-3" type="text" name="Height" placeholder="Enter your height...">
-               <span class="error"></span>
-           </div> 
-           <div class="form-group escort-extra">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Weight (in kilos): </label>
-               <input id="Weight" class="col-sm-3" type="text" name="Weight" placeholder="Enter your weight...">
-               <span class="error"></span>
-           </div> 
-           <div class="form-group escort-extra">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Breasts Type: </label>
-               <select form="reg" id="BreastsType" class="col-sm-3" type="text" name="BreastsType">
-                  <option value="Natural" selected>Natural</option>
-                  <option value="Enchanced">Enchanced</option>
-                  <option value="NotKnown">Unknown</option>
+            </div>
+            <div class="form-group escort-extra">
+                <label class="control-label col-sm-5 col-xs-4">Height (in meters): </label>
+                <input id="Height" class="col-sm-3 col-xs-7" type="text" name="Height" placeholder="Enter your height...">
+                <span class="error"></span>
+            </div>
+            <div class="form-group escort-extra">
+                <label class="control-label col-sm-5 col-xs-4">Weight (in kilos): </label>
+                <input id="Weight" class="col-sm-3 col-xs-7" type="text" name="Weight" placeholder="Enter your weight...">
+                <span class="error"></span>
+            </div>
+            <div class="form-group escort-extra">
+                <label class="control-label col-sm-5 col-xs-4">Breasts Type: </label>
+                <select form="reg" id="BreastsType" class="col-sm-3 col-xs-7" type="text" name="BreastsType">
+                    <option value="Natural" selected>Natural</option>
+                    <option value="Enchanced">Enchanced</option>
+                    <option value="NotKnown">Unknown</option>
                 </select>
-           </div> 
-           <div class="form-group escort-extra">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Breast Size (optional): </label>
-               <input id="BreastSize" class="col-sm-3" type="text" name="BreastSize" placeholder="Enter your breast size...">
-           </div> 
-           <div class="form-group escort-extra">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Hair Color (optional): </label>
-               <input id="HairColor" class="col-sm-3" type="text" name="HairColor" placeholder="Enter your hair color...">
-           </div> 
-           <div class="form-group escort-extra">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Description (optional): </label>
-               <textarea rows="4" id="Description" class="col-sm-3" type="text" name="Description" placeholder="Enter your description..."></textarea>
-           </div> 
-           <div class="form-group escort-extra">
-               <label class="control-label col-sm-4 col-xs-4 col-sm-offset-1">Profile Picture (optional): </label>
-               <input id="B64" class="col-sm-3" type="file" name="B64" onchange="managePicture(this)">
-               <img id="profPic" class="img-responsive col-sm-3 col-xs-3" src="Content/unknown.png">
-           </div> 
-           <button type="submit" class="btn btn-success col-sm-6 col-xs-12 col-sm-offset-3">Register</button>
+            </div>
+            <div class="form-group escort-extra">
+                <label class="control-label col-sm-5 col-xs-4">Breast Size (optional): </label>
+                <input id="BreastSize" class="col-sm-3 col-xs-7" type="text" name="BreastSize" placeholder="Enter your breast size...">
+            </div>
+            <div class="form-group escort-extra">
+                <label class="control-label col-sm-5 col-xs-4">Hair Color (optional): </label>
+                <input id="HairColor" class="col-sm-3 col-xs-7" type="text" name="HairColor" placeholder="Enter your hair color...">
+            </div>
+            <div class="form-group escort-extra">
+                <label class="control-label col-sm-5 col-xs-4">Description (optional): </label>
+                <textarea rows="4" id="Description" class="col-sm-3 col-xs-7" type="text" name="Description" placeholder="Enter your description..."></textarea>
+            </div>
+            <div class="form-group escort-extra">
+                <label class="control-label col-sm-5 col-xs-4">Profile Picture (optional): </label>
+                <input id="B64" class="" type="file" name="B64" onchange="managePicture(this)">
+                <div id="profpic_cont" class="col-sm-3 col-xs-12">
+                    <img id="profPic" class="img-responsive" src="Content/unknown.png">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success col-sm-6 col-xs-12 col-sm-offset-3">Register</button>
         </form>
-    </div> <!-- End registration panel-->   
-    
+    </div> <!-- End registration panel-->
+
     <div class="container guest-results">
-        <ul id="escorts" class="row">
-        </ul>
-        <ul class="pagination">         
-        </ul>
+        <ul id="escorts" class="row"></ul>
+        <ul class="pagination"></ul>
     </div>
-    
-    <div class="modal fade modal-sm" id="myModal">
+
+    <div class="modal fade modal-sm" id="guest_modal">
         <div class="modal-dialog">
-            <div class="modal-content">            
+            <div class="modal-content">
                 <div class="modal-body">
                     <div class="container">
                         <img id="modal_pic" src="" class="img-responsive" />
-                        <span class="info-head">Name:</span><p id="mod_name"></p> 
+                        <span class="info-head">Name:</span><p id="mod_name"></p>
                         <span class="info-head">Descpription:</span><p id="mod_desc"></p>
-                        <span class="info-head">Town:</span><p id="mod_town"></p>    
+                        <span class="info-head">Town:</span><p id="mod_town"></p>
                         <span class="info-head">Price/Hour:</span><p id="mod_price"></p>
-                    </div> 
+                    </div>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+    <div class="modal fade modal-sm" id="profile_pic_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p id="ch_profile_pic_err"></p>
+                    <div class="container col-sm-6">
+                        <div id="pic0" ><img src="Content/no-image.jpg" /></div>
+                        <button type="button" onclick="setProfilePic(this)">Set As Profile</button>
+                    </div>
+                    <div class="container col-sm-6">
+                        <div id="pic1"><img src="Content/no-image.jpg" /></div>
+                        <button type="button" onclick="setProfilePic(this)">Set As Profile</button>
+                    </div>
+                    <div class="container col-sm-6">
+                        <div id="pic2"><img src="Content/no-image.jpg" /></div>
+                        <button type="button" onclick="setProfilePic(this)">Set As Profile</button>
+                    </div>
+                    <div class="container col-sm-6">
+                        <div id="pic3"><img src="Content/no-image.jpg" /></div>
+                        <button type="button" onclick="setProfilePic(this)">Set As Profile</button>
+                    </div>
+                    <div class="container col-sm-6">
+                        <div id="pic4"><img src="Content/no-image.jpg" /></div>
+                        <button type="button" onclick="setProfilePic(this)">Set As Profile</button>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade modal-sm" id="add_delete_pics_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p id="ch_profile_pic_err"></p>
+                    <div class="container col-sm-6">
+                        <div id="pic0"><img src="Content/no-image.jpg" /></div>
+                        <button id="add" type="button" onclick="addPic(this)">Add</button><button type="button" id="del" onclick="delPic(this)" disabled>Delete</button><input class="pic-input" type="file" onchange="manageNewPics(this)" />
+                    </div>
+                    <div class="container col-sm-6">
+                        <div id="pic1"><img src="Content/no-image.jpg" /></div>
+                        <button id="add" type="button" onclick="addPic(this)">Add</button><button type="button" id="del" onclick="delPic(this)" disabled>Delete</button><input class="pic-input" type="file" onchange="manageNewPics(this)" />
+                    </div>
+                    <div class="container col-sm-6">
+                        <div id="pic2"><img src="Content/no-image.jpg" /></div>
+                        <button id="add" type="button" onclick="addPic(this)">Add</button><button type="button" id="del" onclick="delPic(this)" disabled>Delete</button><input class="pic-input" type="file" onchange="manageNewPics(this)" />
+                    </div>
+                    <div class="container col-sm-6">
+                        <div id="pic3"><img src="Content/no-image.jpg" /></div>
+                        <button id="add" type="button" onclick="addPic(this)">Add</button><button type="button" id="del" onclick="delPic(this)" disabled>Delete</button><input class="pic-input" type="file" onchange="manageNewPics(this)" />
+                    </div>
+                    <div class="container col-sm-6">
+                        <div id="pic4"><img src="Content/no-image.jpg" /></div>
+                        <button id="add" type="button" onclick="addPic(this)">Add</button><button type="button" id="del" onclick="delPic(this)" disabled>Delete</button><input class="pic-input" type="file" onchange="manageNewPics(this)" />
+                    </div>
+                    <div class="container col-sm-6">
+                        <div id="pic5"><img src="Content/no-image.jpg" /></div>
+                        <button id="add" type="button" onclick="addPic(this)">Add</button><button type="button" id="del" onclick="delPic(this)" disabled>Delete</button><input class="pic-input" type="file" onchange="manageNewPics(this)" />
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="container user-panel"> <!--USER PANEL-->
+        <div id="prof_pic" class="col-sm-4 col-xs-12">
+            <img class="image-responsive" src="Content/no-image.jpg">
+            <button type="button" class="btn btn-info only-escort" id="prof_pic_ch" onclick="changeProfilePic()">Change profile picture</button>
+        </div>
+
+        <div id="info_pan" class="col-sm-7 col-xs-12 col-sm-offset-1">
+            <p class="col-sm-12" id="p_desc">Description: <span id="s_desc"></span></p><p class="col-sm-6">Hair color: <span id="s_hair"></span></p><p class="col-sm-6">Breast Size: <span id="s_breasts"></span></p>
+            <p class="col-sm-6">Breast Type: <span id="s_breastt"></span></p><p class="col-sm-6">Height: <span id="s_height"></span></p><p class="col-sm-6">Weight: <span id="s_weight"</p>
+            <p class="col-sm-6">Town: <span id="s_town"></span></p><p class="col-sm-12">Prices For:</p><p id="prices" class="col-sm-12">30Min - <span id="30_min">123</span> Hour - <span id="h_rate">123</span> 3Hours - <span id="3h_rate">123</span> 6Hours - <span id="6h_rate">123</span> Overnight - <span id="night">123</span> Whole Day - <span id="day">123</span> Weekend - <span id="weekend">15</span> Week - <span id="week">123</span></p>
+            <button type="button" class="btn btn-info only-escort" id="info_ch_btn">Edit Info</button>
+        </div>
+        <div id="pic_pan" class="col-sm-4 col-xs-12">
+            <div id="pic0" class="col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1"><img src="Content/no-image.jpg"></div>
+            <div id="pic1" class="col-sm-4 col-sm-offset-2 col-xs-4 col-xs-offset-2"><img src="Content/no-image.jpg"></div>
+            <div id="pic2" class="col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1"><img src="Content/no-image.jpg"></div>
+            <div id="pic3" class="col-sm-4 col-sm-offset-2 col-xs-4 col-xs-offset-2"><img src="Content/no-image.jpg"></div>
+            <div id="pic4" class="col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1"><img src="Content/no-image.jpg"></div>
+            <div id="pic5" class="col-sm-4 col-sm-offset-2 col-xs-4 col-xs-offset-2"><img src="Content/no-image.jpg"></div>
+            <button type="button" class="btn btn-info only-escort" id="pics_ch_btn" onclick="editPictures()">Edit pictures</button>
+        </div>
+        <div id="app_pan" class="only escort col-sm-7 col-xs-12 col-sm-offset-1">
+            <span id="app_head">Appointments:</span>
+            <div class="app"><p class="col-sm-9">From: <span id_suser>mongo</span> Start time: <span id="s_stime">20/12/2008 10:15 </span> End time: <span id="s_etime">20/12/2008 10:15 </span> Location: <span id="s_loc">20/12/2008 10:15 </span></p><button type="button" class="btn btn-danger col-sm-3">Cancel</button></div>
+        </div>
+
+        <div id="rev_pan" class="col-sm-7 col-xs-12 col-sm-offset-1">
+            <button type="button" class="btn btn-info col-sm-4 only-customer" id="wr_rev_btn">Write review</button>
+            <span id="rev_head">Reviews:</span>
+            <div class="rev"><p>From: <span id="s_from"></span></p><p class="col-sm-9"> </p><span class="col-sm-3"><span id="s_score"></span> / <span id="s_stars"><span class="glyphicon glyphicon-star-empty"></span></span></span></div>
+        </div>
+    </div> <!--/.user-panel-->
+
     <footer class="footer">
-      <div class="container">
-        <p class="text-muted">&copy; 2015 - TEAM ELECTRIC LEVENDER</p>
-      </div>
+        <div class="container">
+            <p class="text-muted">&copy; 2015 - TEAM ELECTRIC LEVENDER</p>
+        </div>
     </footer>
 </body>
 </html>

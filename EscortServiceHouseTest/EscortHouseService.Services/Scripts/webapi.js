@@ -7,6 +7,11 @@ var userInfoUrl = "http://localhost:50825/api/account/UserInfo";
 var guestEscortUrl = "http://localhost:50825/api/guest/escorts";
 var guestEscortCountUrl = "http://localhost:50825/api/guest/escorts/count";
 var guestEscortDetailInfo = "http://localhost:50825/api/guest/escorts/";
+var escortProfilePictureUrl = "http://localhost:50825/api/escort/pictures/profile";
+var escortNonProfilePicturesUrl = "http://localhost:50825/api/escort/pictures/nonprofile";
+var escortAllPicturesUrl = "http://localhost:50825/api/escort/pictures";
+var escortPicturesAdd = "http://localhost:50825/api/escort/pictures/add";
+var escortChangeProfPic = "http://localhost:50825/api/escort/pictures/";
 
 $(document).ready(function () {
     if (document.cookie) {
@@ -15,6 +20,23 @@ $(document).ready(function () {
         setForRegister();
     }
 });
+
+function manageNewPics(element) {
+    var id = $(element).siblings()[0].id;
+    $("#add_delete_pics_modal #" + id).siblings()[0].disabled = false;
+
+    var file = element.files[0];
+    var reader = new FileReader();
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+
+    reader.onloadend = function () {
+        $('#add_delete_pics_modal #' + id + ' img').removeAttr('src');
+        $('#add_delete_pics_modal #' + id + ' img').attr('src', reader.result);
+    }
+}
 
 function clearCookie() {
     document.cookie = 'username=; expires=' + cookieDeleteDate;
@@ -27,7 +49,7 @@ function showEscortProfile() {
 }
 
 function guestEscortInfo(element) {
-   
+
     $.ajax({
         url: guestEscortDetailInfo + element.name,
         type: "GET",
@@ -38,8 +60,8 @@ function guestEscortInfo(element) {
                 desc = json['Description'],
                 price = json['HourRate'],
                 town = json['Town'];
-            $('#myModal').modal();
-            $('#myModal').on('shown.bs.modal', function () {
+            $('#guest_modal').modal();
+            $('#guest_modal').on('shown.bs.modal', function () {
                 $("#modal_pic").attr('src', pic_src);
                 $('#mod_name').text(name);
                 $('#mod_desc').text(desc);
@@ -120,6 +142,173 @@ function enterGuestMode() {
     showGuestGallery();
 }
 
+function setTheEscortView() {
+    var cookies = document.cookie.split('; '),
+        token = cookies[1].split('=')[1];
+
+    $.ajax({
+        url: escortProfilePictureUrl,
+        type: "GET",
+        dataType: "jsonp",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        complete: function (xhr) {
+            var infoJson = JSON.parse(xhr.responseText),
+                id = infoJson["Id"],
+                B64 = infoJson["B64"]
+            $("#prof_pic>img").attr("src", B64).attr("id", id);
+        }
+    });
+
+    $.ajax({
+        url: escortAllPicturesUrl,
+        type: "GET",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        complete: function (xhr) {
+            var modalFields = 6,
+                allPictures = JSON.parse(xhr.responseText),
+                len = allPictures.length;
+
+            for (var i = 0; i < modalFields; i++) {
+                if (i < len) {
+                    $("#pic_pan #pic" + i + " img" + ", #add_delete_pics_modal #pic" + i + " img")
+                        .attr("src", allPictures[i]["B64"])
+                        .attr("id", allPictures[i]["Id"]);
+                    $("#add_delete_pics_modal #pic" + i).siblings()[0].disabled = true;
+                    $("#add_delete_pics_modal #pic" + i).siblings()[1].disabled = false;
+                    $("#add_delete_pics_modal #pic" + i).siblings()[2].disabled = true;
+                    console.log("picture applied");
+                } else {
+                    console.log("empty field hidden");
+                    $("#add_delete_pics_modal #pic" + i).siblings()[0].disabled = true;
+                }
+            }
+        }
+    });
+    $('.user-panel').show();
+}
+
+function setProfilePic(element) {
+    var confirmResult = confirm("Are you sure you want to change your profile picture?");
+    if (confirmResult) {
+        var elementId = $(element).siblings()[0].id;
+        var picId = $('#' + elementId + " img").attr("id");
+        var cookies = document.cookie.split('; '),
+            token = cookies[1].split('=')[1];
+        console.log(picId);
+        $.ajax({
+            url: escortChangeProfPic + picId + '/change',
+            type: "PUT",
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer " + token);
+            },
+            success: function () {
+                setTheEscortView();
+            },
+            error: function (xhr) {
+                console.log(xhr.responseText);
+            }
+        });
+    }
+}
+
+function delPic(element) {
+    var confirmResult = confirm("Are you sure you want to delete this picture?");
+    if (confirmResult) {
+        var elementId = $(element).siblings()[0].id;
+        var picId = $('#' + elementId + " img")[1].id;
+        var cookies = document.cookie.split('; '),
+            token = cookies[1].split('=')[1];
+        console.log(picId);
+        
+        console.log(picId);
+        $.ajax({
+            url: escortChangeProfPic + picId + '/delete',
+            type: "DELETE",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer " + token);
+            },
+            success: function () {
+                location.reload();
+            },
+            error: function (xhr) {
+                var responseJson = JSON.parse(xhr.responseText);
+                alert(responseJson["Message"]);
+            }
+        });
+        
+    }
+}
+function editPictures() {
+    $("#add_delete_pics_modal").modal();
+}
+
+function addPic(element) {
+    var confirmResult = confirm("Are you sure you want to add this picture?");
+    if (confirmResult) {
+        var pictureDiv = $(element).siblings()[0],
+            pictureElement = $("#" + pictureDiv.id + " img"),
+            picture = { "B64": pictureElement[1].src },
+            cookies = document.cookie.split('; '),
+            token = cookies[1].split('=')[1];
+        $.ajax({
+            url: escortPicturesAdd,
+            type: "POST",
+            data: picture,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer " + token);
+            },
+            success: function (xhr) {
+                location.reload();
+            },
+            error: function (xhr) {
+                var responseJson = JSON.parse(xhr.responseText);
+                console.log(responseJson["Message"]);
+            }
+        });
+    }
+}
+
+function changeProfilePic() {
+    $("#profile_pic_modal>.container").show();
+    var id = $("#prof_pic>img").attr("id");
+
+    $('#profile_pic_modal').modal();
+    var cookies = document.cookie.split('; '),
+            token = cookies[1].split('=')[1];
+    
+    $.ajax({
+        url: escortNonProfilePicturesUrl,
+        type: "GET",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        complete: function (xhr) {
+            var nonProfilePictures = JSON.parse(xhr.responseText),
+                len = nonProfilePictures.length,
+                modalFields = 5;
+            for (var i = 0; i < modalFields; i++) {
+                if (i < len) {
+                    $("#profile_pic_modal #pic" + i + " img")
+                        .attr("src", nonProfilePictures[i]["B64"])
+                        .attr("id", nonProfilePictures[i]["Id"]);
+                } else {
+                    $("#profile_pic_modal #pic" + i).parent().hide();
+                }
+            }
+            if (len == 0) {
+                $("#ch_profile_pic_err").text("There are no additional pictures to change!");
+            }
+        }
+    });
+    $('#profile_pic_modal').on('hide.bs.modal', function () {
+        $("#ch_profile_pic_err").text("");
+    });
+}
+
 function setLoggedView() {
     $('#login_error').text('');
     var cookies = document.cookie.split('; '),
@@ -137,10 +326,13 @@ function setLoggedView() {
         complete: function (xhr) {
             var infoJson = JSON.parse(xhr.responseText);
             if (infoJson['Roles'][0] === 'Escort') {
-                $('.escort-btn').show();
+                //$('.escort-btn').show();
+                $('.only-customer').hide();
+                setTheEscortView();
                 $('#home_btn').click(showEscortProfile);
             } else {
-                $('.escort-btn').hide();
+                //$('.escort-btn').hide();
+                $('.only-escort').hide();
             }
         }
     });
@@ -167,10 +359,10 @@ function login() {
     }
 
     var token = {
-            "username": user_name,
-            "password": user_password,
-            "grant_type": "password"
-        };
+        "username": user_name,
+        "password": user_password,
+        "grant_type": "password"
+    };
 
     $.ajax({
         url: loginUrl,
@@ -245,6 +437,7 @@ function setForRegister() {
     $('#login_error').text('');
     $('.jcont').fadeIn();
     $('.guest').fadeIn();
+    $('.user-panel').hide();
     emptySearch();
 }
 
@@ -287,7 +480,7 @@ var manageErrorJson = function (xhr, status, error) {
 };
 
 function showProceedBtn() {
-    $('.guest>button').removeClass('btn-warning').addClass('btn-success').text('Proceed to the gallery ->').click(login);
+    $('.guest>button').removeClass('btn-warning').addClass('btn-success').text('Proceed to the gallery ->').prop('onclick', null).click(login);
 }
 
 function registerCustomer() {
@@ -340,7 +533,7 @@ function registerEscort() {
         success: function (role) {
             clearRegisterPanel();
             $('#regComplete').text('Registration completed successfully. Welcome ' + escort['Username'] + '!');
-            showProceedBtn()
+            showProceedBtn();
         },
         error: manageErrorJson
     });
