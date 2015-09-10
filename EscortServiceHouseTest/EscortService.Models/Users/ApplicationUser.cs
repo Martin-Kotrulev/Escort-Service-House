@@ -20,6 +20,8 @@ namespace EscortService.Models.Users
         [Required]
         public Gender Gender { get; set; }
 
+        public bool IsDeleted { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(
             UserManager<ApplicationUser> manager,
         string authenticationType)

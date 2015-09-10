@@ -39,12 +39,12 @@ namespace EscortService.Models.Users
 
         public float Weight { get; set; }
 
+        public string AddressOfService { get; set; }
+
         [Required]
         public string Town { get; set; }
         
         public virtual PriceList Prices { get; set; }
-
-        public bool IsDeleted { get; set; }
 
         public virtual ICollection<Service> Services
         { 

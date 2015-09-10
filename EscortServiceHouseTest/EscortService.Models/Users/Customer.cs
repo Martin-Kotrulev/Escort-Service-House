@@ -17,8 +17,6 @@ namespace EscortService.Models.Users
             this.appointments = new HashSet<Appointment>();
         }
 
-        public bool IsDeleted { get; set; }
-
         public ICollection<Review> ReviewsPosted
         {
             get

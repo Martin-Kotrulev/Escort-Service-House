@@ -8,6 +8,5 @@ namespace EscortService.Models.Users
 {
     public class Admin : ApplicationUser
     {
-        public bool IsDeleted { get; set; }
     }
 }
